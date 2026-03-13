@@ -4,9 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Favicon using profile photo -->
-  <link rel="icon" type="image/jpeg" href="profile.jpg" />
+  <!-- Favicon — circular profile photo generated via canvas -->
+  <link rel="icon" id="favicon-link" type="image/png" href="" />
   <link rel="apple-touch-icon" href="profile.jpg" />
+  <script>
+    (function() {
+      const img = new Image();
+      img.src = 'profile.jpg';
+      img.onload = function() {
+        const size = 64;
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, 0, 0, size, size);
+        document.getElementById('favicon-link').href = canvas.toDataURL('image/png');
+      };
+    })();
+  </script>
 
   <!-- SEO Meta Tags -->
   <title>Suman Sitaula | FCCA | Business Excellence & Strategy Leader | ACCA Tutor | Nepal</title>
@@ -1445,6 +1463,7 @@
         <h2 class="section-heading" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A Leader at the Intersection of<br>Strategy, Systems &amp; Excellence</h2>
         <p style="margin-top:24px;">A result-driven ACCA-qualified professional with 14+ years of experience in Automotive and Allied Business, specialising in Internal Audit, Enterprise Risk Management, Operational Excellence, Customer Experience, and Digital Transformation.</p>
         <p>Adept at driving strategic decision-making, optimising business processes, and implementing cutting-edge technologies to enhance financial and operational performance. Known for building world-class systems, coaching top-ranked ACCA professionals, and delivering measurable impact across organisations.</p>
+        <p>A Certified Soft Skills Trainer with 10+ years of hands-on training experience in MS Excel, Power Query, Power Pivot, Power BI, and Quality Management Systems — empowering professionals with the tools and mindset to excel.</p>
       </div>
     </div>
 
@@ -1484,14 +1503,14 @@
       <div class="timeline-item">
         <div class="tl-card reveal-left">
           <div class="tl-company">Sipradi Trading Pvt. Ltd.</div>
-          <div class="tl-role">Business Professional – Strategy &amp; Excellence</div>
+          <div class="tl-role">Chief Manager – Business Strategy &amp; Excellence</div>
           <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> January 2022 – Present &nbsp;·&nbsp; Nayanaikap, Kathmandu</div>
           <ul class="tl-bullets">
             <li>Led establishment of a world-class Call Center for operational efficiency and enhanced CX</li>
             <li>Conducted 360° Customer Experience Reviews, providing strategic recommendations to management</li>
             <li>Spearheaded ISO 9001 and ISO 45001 management system development across SBUs</li>
             <li>Designed Management Development Programs for Management Representatives (MR)</li>
-            <li>Formulated Digital Roadmap; drove automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and corporate website consulting</li>
+            <li>Formulated Digital Roadmap; driving automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and corporate website consulting</li>
           </ul>
         </div>
         <div class="tl-dot"><div class="tl-dot-inner"></div></div>
@@ -1718,8 +1737,8 @@
     <div class="achievements-grid">
       <div class="achievement-card reveal" style="transition-delay:0s">
         <span class="achievement-emoji">🥇</span>
-        <h3>Best Employee of the Year</h3>
-        <p>Recognised with Sipradi's prestigious Best Employee Award for outstanding contribution and leadership.</p>
+        <h3>Best Employee of the Year — 2018</h3>
+        <p>Recognised with Sipradi's prestigious Best Employee Award (Functional Unit) for outstanding contribution, leadership, and excellence in systems &amp; compliance.</p>
       </div>
       <div class="achievement-card reveal" style="transition-delay:0.1s">
         <span class="achievement-emoji">🌍</span>
@@ -1824,7 +1843,7 @@
       <div class="testimonial-card reveal" style="transition-delay:0s">
         <div class="testimonial-quote" aria-hidden="true">"</div>
         <p class="testimonial-text">Suman's ability to bridge technical complexity with strategic clarity is remarkable. His ISO implementation work transformed our entire operational approach.</p>
-        <div class="testimonial-author">
+        <div class="testimonial-author" style="display:none;">
           <strong>[Name], [Role]</strong>
           <span>[COMPANY]</span>
         </div>
@@ -1832,7 +1851,7 @@
       <div class="testimonial-card reveal" style="transition-delay:0.15s">
         <div class="testimonial-quote" aria-hidden="true">"</div>
         <p class="testimonial-text">As an ACCA tutor, Suman doesn't just teach — he inspires. His students consistently achieve top ranks because he genuinely invests in their success.</p>
-        <div class="testimonial-author">
+        <div class="testimonial-author" style="display:none;">
           <strong>[Name], [Role]</strong>
           <span>[Organisation]</span>
         </div>
@@ -1840,7 +1859,7 @@
       <div class="testimonial-card reveal" style="transition-delay:0.3s">
         <div class="testimonial-quote" aria-hidden="true">"</div>
         <p class="testimonial-text">The BI dashboards Suman designed gave us real-time visibility we never had before. It fundamentally changed how our leadership team makes decisions.</p>
-        <div class="testimonial-author">
+        <div class="testimonial-author" style="display:none;">
           <strong>[Name], [Role]</strong>
           <span>[COMPANY]</span>
         </div>
