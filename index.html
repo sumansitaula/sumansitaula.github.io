@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Suman Sitaula | FCCA | Business Excellence & Strategy Leader | ACCA Tutor | Nepal</title>
+  <meta name="description" content="Suman Sitaula – FCCA qualified professional with 14+ years in Business Excellence, ISO Accreditations, Digital Transformation, Customer Experience, and ACCA tutoring in Nepal." />
+  <meta name="keywords" content="Suman Sitaula, FCCA Nepal, Business Excellence, ISO 9001, ISO 45001, Digital Transformation, ACCA Tutor SBL, Customer Experience, Internal Audit, Kathmandu" />
+  <meta property="og:title" content="Suman Sitaula | Business Excellence Leader" />
+  <meta property="og:description" content="FCCA-qualified leader driving business transformation, ISO excellence, and ACCA education in Nepal." />
+  <meta property="og:image" content="profile.jpg" />
+  <meta name="author" content="Suman Sitaula" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES — DESIGN TOKENS
+    ============================================= */
+    :root {
+      --bg-primary:     #0A0E1A;
+      --bg-secondary:   #111827;
+      --bg-card:        #161D2F;
+      --accent-gold:    #D4A843;
+      --accent-gold-lt: #F5C842;
+      --accent-electric:#4F8EF7;
+      --text-primary:   #F0F4FF;
+      --text-secondary: #8B95B0;
+      --border:         #1E2A45;
+      --gradient:       linear-gradient(135deg, #D4A843, #F5C842);
+      --gradient-blue:  linear-gradient(135deg, #4F8EF7, #7EB3FF);
+      --font-serif:     'Cormorant Garamond', Georgia, serif;
+      --font-sans:      'DM Sans', system-ui, sans-serif;
+      --font-mono:      'Space Mono', monospace;
+      --nav-height:     72px;
+      --transition:     0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius:         12px;
+      --shadow-gold:    0 0 40px rgba(212, 168, 67, 0.15);
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    input, select, textarea { font-family: inherit; }
+
+    /* =============================================
+       SCROLLBAR
+    ============================================= */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 3px; }
+
+    /* =============================================
+       TYPOGRAPHY UTILITIES
+    ============================================= */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+      position: relative;
+      display: inline-block;
+    }
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient);
+      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 0 12px rgba(212,168,67,0.5);
+    }
+    .section-heading.animated::after { width: 70%; }
+    .section-center { text-align: center; }
+    .section-center .section-heading::after { left: 50%; transform: translateX(-50%); }
+
+    /* =============================================
+       SECTION LAYOUT
+    ============================================= */
+    section { padding: 100px 0; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-intro { margin-bottom: 70px; }
+
+    /* =============================================
+       REVEAL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* =============================================
+       ANIMATED GRID BACKGROUND
+    ============================================= */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridShift 20s linear infinite;
+    }
+    @keyframes gridShift {
+      0% { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
+      border-bottom: 1px solid transparent;
+    }
+    #navbar.scrolled {
+      background: rgba(10,14,26,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-monogram {
+      width: 42px; height: 42px;
+      background: var(--gradient);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0A0E1A;
+      box-shadow: 0 0 20px rgba(212,168,67,0.3);
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-gold);
+      background: rgba(212,168,67,0.08);
+    }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 28px;
+      padding: 4px 0;
+      cursor: pointer;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: rgba(10,14,26,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      padding: 20px 24px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--accent-gold); }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    #home {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0;
+      overflow: hidden;
+    }
+    .hero-banner {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      /* Placeholder gradient — replace banner.jpg when available */
+      background: linear-gradient(135deg, #0A0E1A 0%, #0D1829 30%, #111827 60%, #161D2F 100%);
+      overflow: hidden;
+    }
+    /* Placeholder banner image — add real banner.jpg when available */
+    /* <img id="banner-image" src="banner.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"> */
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 30%, rgba(79,142,247,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 70%, rgba(212,168,67,0.08) 0%, transparent 60%);
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+    @keyframes heroGlow {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    /* Animated particles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      opacity: 0;
+      animation: floatParticle linear infinite;
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+    .hero-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 70%;
+      background: linear-gradient(to top, rgba(10,14,26,1) 0%, rgba(10,14,26,0.7) 50%, transparent 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 60px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: flex-end;
+    }
+    .hero-avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-avatar {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-gold);
+      box-shadow: 0 0 0 6px rgba(212,168,67,0.1), var(--shadow-gold);
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      animation: avatarPulse 4s ease-in-out infinite;
+    }
+    @keyframes avatarPulse {
+      0%, 100% { box-shadow: 0 0 0 6px rgba(212,168,67,0.1), 0 0 40px rgba(212,168,67,0.15); }
+      50% { box-shadow: 0 0 0 10px rgba(212,168,67,0.15), 0 0 60px rgba(212,168,67,0.25); }
+    }
+    /* Placeholder profile photo — replace src="profile.jpg" with your actual profile photo path */
+    .avatar-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1a2240, #252f4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+    .hero-text { animation: heroFadeUp 0.9s ease both; }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-pretitle {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      animation: heroFadeUp 0.9s 0.1s ease both;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 12px;
+      animation: heroFadeUp 0.9s 0.2s ease both;
+      letter-spacing: -0.01em;
+    }
+    .hero-title {
+      font-family: var(--font-mono);
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      letter-spacing: 0.12em;
+      color: var(--accent-electric);
+      margin-bottom: 18px;
+      animation: heroFadeUp 0.9s 0.3s ease both;
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--text-primary);
+      opacity: 0.9;
+      margin-bottom: 16px;
+      animation: heroFadeUp 0.9s 0.4s ease both;
+    }
+    .hero-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 32px;
+      animation: heroFadeUp 0.9s 0.5s ease both;
+      line-height: 1.8;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: heroFadeUp 0.9s 0.6s ease both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      font-weight: 700;
+    }
+    .btn-gold {
+      background: var(--gradient);
+      color: #0A0E1A;
+      box-shadow: 0 4px 24px rgba(212,168,67,0.3);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(212,168,67,0.45);
+    }
+    .btn-outline {
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: rgba(212,168,67,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
+      padding: 0;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .stat-item {
+      padding: 28px 16px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background var(--transition);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: rgba(212,168,67,0.04); }
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-suffix {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent-gold-lt);
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    /* =============================================
+       ABOUT SECTION
+    ============================================= */
+    #about { background: var(--bg-primary); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4/5;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      position: relative;
+    }
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: var(--gradient);
+      z-index: -1;
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #161D2F, #1a2440);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 6rem;
+      color: rgba(212,168,67,0.2);
+    }
+    .about-badges {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-gold);
+      padding: 8px 14px;
+      border-radius: 0 8px 8px 0;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .about-bio .section-heading { margin-bottom: 28px; }
+    .about-bio p {
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Highlight cards */
+    .highlight-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3), var(--shadow-gold);
+    }
+    .highlight-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .highlight-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .highlight-card p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       EXPERIENCE (TIMELINE) SECTION
+    ============================================= */
+    #experience { background: var(--bg-secondary); }
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--accent-gold), var(--accent-gold), transparent);
+      transform: translateX(-50%);
+      opacity: 0.4;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) .tl-card { grid-column: 1; grid-row: 1; margin-right: 30px; }
+    .timeline-item:nth-child(odd) .tl-dot { grid-column: 2; grid-row: 1; }
+    .timeline-item:nth-child(odd) .tl-spacer { grid-column: 3; grid-row: 1; }
+    .timeline-item:nth-child(even) .tl-spacer { grid-column: 1; grid-row: 1; }
+    .timeline-item:nth-child(even) .tl-dot { grid-column: 2; grid-row: 1; }
+    .timeline-item:nth-child(even) .tl-card { grid-column: 3; grid-row: 1; margin-left: 30px; }
+    .tl-dot {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 20px;
+    }
+    .tl-dot-inner {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 16px rgba(212,168,67,0.6);
+      flex-shrink: 0;
+    }
+    .tl-spacer { display: block; }
+    .tl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .tl-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,168,67,0.4);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .tl-company {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+    }
+    .tl-role {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .tl-date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tl-date i { color: var(--accent-electric); font-size: 0.7rem; }
+    .tl-bullets { padding-left: 0; }
+    .tl-bullets li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 4px 0 4px 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .tl-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-size: 0.7rem;
+      top: 5px;
+    }
+
+    /* =============================================
+       SKILLS SECTION
+    ============================================= */
+    #skills { background: var(--bg-primary); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .skill-card:hover::before { transform: scaleX(1); }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.3);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .skill-card p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Certifications Strip */
+    .certs-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .cert-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--accent-gold);
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .cert-badge:hover {
+      background: rgba(212,168,67,0.1);
+      border-color: var(--accent-gold);
+    }
+
+    /* =============================================
+       ACHIEVEMENTS SECTION
+    ============================================= */
+    #achievements { background: var(--bg-secondary); }
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .achievement-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+    }
+    .achievement-card:hover::after { transform: scaleX(1); }
+    .achievement-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.3);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3), var(--shadow-gold);
+    }
+    .achievement-emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .achievement-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .achievement-card p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       EDUCATION SECTION
+    ============================================= */
+    #education { background: var(--bg-primary); }
+    .edu-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .edu-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,168,67,0.3);
+    }
+    .edu-icon {
+      width: 48px; height: 48px;
+      background: rgba(212,168,67,0.1);
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .edu-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .edu-degree {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .edu-year {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .edu-detail {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* =============================================
+       TESTIMONIALS SECTION
+    ============================================= */
+    #testimonials { background: var(--bg-secondary); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      position: relative;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.3);
+    }
+    .testimonial-quote {
+      font-size: 4rem;
+      color: var(--accent-gold);
+      opacity: 0.2;
+      position: absolute;
+      top: 16px; left: 24px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      padding-top: 20px;
+    }
+    .testimonial-author strong {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      display: block;
+    }
+    .testimonial-author span {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+    }
+
+    /* =============================================
+       APPOINTMENTS SECTION
+    ============================================= */
+    #appointments { background: var(--bg-primary); }
+    .appt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .appt-offers h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+    .appt-offer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .appt-offer-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .appt-offer-item:hover {
+      border-color: var(--accent-gold);
+      color: var(--text-primary);
+    }
+    .appt-offer-item i { color: var(--accent-gold); width: 16px; }
+
+    /* Form styling */
+    .appt-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .appt-form-wrap h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238B95B0' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 20px;
+      padding-right: 40px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(212,168,67,0.1);
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 16px;
+      text-align: center;
+    }
+    .form-note strong { color: var(--accent-gold); }
+
+    /* =============================================
+       CONTACT SECTION
+    ============================================= */
+    #contact { background: var(--bg-secondary); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .contact-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateX(4px);
+    }
+    .contact-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(212,168,67,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-card-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .contact-card-text span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .social-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .social-btn:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      background: rgba(212,168,67,0.08);
+      transform: translateY(-3px);
+    }
+    .contact-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .contact-form-wrap h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 0;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 16px; }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--accent-gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      opacity: 0.8;
+    }
+
+    /* Back to top */
+    #back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 900;
+      width: 48px; height: 48px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0A0E1A;
+      font-size: 1rem;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(212,168,67,0.4);
+      border: none;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(212,168,67,0.55);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; align-items: center; }
+      .hero-avatar-wrap { margin: 0 auto; }
+      .hero-cta { justify-content: center; }
+      .stats-inner { grid-template-columns: repeat(3, 1fr); }
+      .stat-item:nth-child(4), .stat-item:nth-child(5) { border-right: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { max-width: 280px; margin: 0 auto; }
+      .about-badges { right: -10px; }
+      .highlight-cards { grid-template-columns: 1fr; }
+      .timeline::before { left: 20px; }
+      .timeline-item { grid-template-columns: 20px auto; gap: 20px; }
+      .timeline-item:nth-child(odd) .tl-card,
+      .timeline-item:nth-child(even) .tl-card { grid-column: 2; grid-row: 1; margin: 0; }
+      .timeline-item:nth-child(odd) .tl-dot,
+      .timeline-item:nth-child(even) .tl-dot { grid-column: 1; grid-row: 1; }
+      .tl-spacer { display: none; }
+      .appt-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .edu-cards { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-item:nth-child(5) { grid-column: 1 / -1; border-right: none; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .achievements-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .appt-form-wrap { padding: 24px; }
+      section { padding: 70px 0; }
+      .hero-name { font-size: clamp(2rem, 10vw, 3rem); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated grid background -->
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- =============================================
+     NAVIGATION
+============================================= -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Suman Sitaula Home">
+      <div class="logo-monogram">SS</div>
+      <span>Suman Sitaula</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#appointments">Appointments</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+  <a href="#achievements" onclick="closeMobileMenu()">Achievements</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="#appointments" onclick="closeMobileMenu()">Appointments</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- =============================================
+     HERO SECTION
+============================================= -->
+<section id="home" aria-label="Hero">
+  <div class="hero-banner">
+    <!-- Banner image commented out — uncomment below and add banner.jpg when you have a dark/suitable image -->
+    <!-- <img id="banner-image" src="banner.jpg" alt="Banner background" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" /> -->
+    <div class="hero-particles" id="particles" aria-hidden="true"></div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-avatar-wrap reveal">
+      <div class="hero-avatar">
+        <img id="profile-photo" src="profile.jpg" alt="Suman Sitaula" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <span class="hero-pretitle">FCCA · Business Professional · ACCA Tutor</span>
+      <h1 class="hero-name">SUMAN<br>SITAULA</h1>
+      <p class="hero-title">FCCA &nbsp;|&nbsp; BUSINESS PROFESSIONAL – STRATEGY &amp; EXCELLENCE</p>
+      <p class="hero-tagline">"Transforming Businesses Through Excellence, Data &amp; Strategy"</p>
+      <p style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.22em;color:var(--accent-gold);text-transform:uppercase;margin-bottom:18px;opacity:0.85;">— The Intuitive Advisor —</p>
+      <p class="hero-desc">14+ years in Automotive &amp; Allied Business &nbsp;·&nbsp; ISO Accreditations &nbsp;·&nbsp; Digital Transformation &nbsp;·&nbsp; Customer Experience &nbsp;·&nbsp; ACCA Tutor</p>
+      <div class="hero-cta">
+        <a href="#appointments" class="btn btn-gold">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          Book an Appointment
+        </a>
+        <!-- Replace CV_Suman_Sitaula.pdf with the actual CV file path -->
+        <a href="CV_Suman_Sitaula.pdf" class="btn btn-outline" download>
+          <i class="fa-solid fa-download" aria-hidden="true"></i>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip" aria-label="Key statistics">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-number"><span class="counter" data-target="14">0</span><span class="stat-suffix">+</span></span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.1s">
+      <span class="stat-number"><span class="counter" data-target="4">0</span></span>
+      <span class="stat-label">ISO Certifications Led</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.2s">
+      <span class="stat-number"><span class="counter" data-target="500">0</span><span class="stat-suffix">+</span></span>
+      <span class="stat-label">Professionals Trained</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.3s">
+      <span class="stat-number"><span class="counter" data-target="25">0</span><span class="stat-suffix">+</span></span>
+      <span class="stat-label">BI Dashboards Built</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.4s">
+      <span class="stat-number"><span class="counter" data-target="3">0</span></span>
+      <span class="stat-label">Global Top-10 ACCA Rankers</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     ABOUT SECTION
+============================================= -->
+<section id="about" aria-label="About Me">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="section-label">Who I Am</span>
+      <h2 class="section-heading">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal-left">
+        <div class="about-photo">
+          <img src="profile.jpg" alt="Suman Sitaula" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="about-badges" aria-label="Professional designations">
+          <div class="badge">FCCA Qualified</div>
+          <div class="badge">ISO Expert</div>
+          <div class="badge">Digital Strategist</div>
+          <div class="badge">ACCA SBL Tutor</div>
+        </div>
+      </div>
+
+      <div class="about-bio reveal-right">
+        <span class="section-label">My Story</span>
+        <h2 class="section-heading" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A Leader at the Intersection of<br>Strategy, Systems &amp; Excellence</h2>
+        <p style="margin-top:24px;">A result-driven ACCA-qualified professional with 14+ years of experience in Automotive and Allied Business, specialising in Internal Audit, Enterprise Risk Management, Operational Excellence, Customer Experience, and Digital Transformation.</p>
+        <p>Adept at driving strategic decision-making, optimising business processes, and implementing cutting-edge technologies to enhance financial and operational performance. Known for building world-class systems, coaching top-ranked ACCA professionals, and delivering measurable impact across organisations.</p>
+      </div>
+    </div>
+
+    <div class="highlight-cards">
+      <div class="highlight-card reveal" style="transition-delay:0s">
+        <span class="highlight-icon">🏆</span>
+        <h3>Business Excellence</h3>
+        <p>ISO 9001 · ISO 45001 · Risk Management · CX Strategy · Operational Frameworks</p>
+      </div>
+      <div class="highlight-card reveal" style="transition-delay:0.15s">
+        <span class="highlight-icon">💡</span>
+        <h3>Digital Transformation</h3>
+        <p>ERP (MS Dynamics NAV) · Power BI · MS Power Platform · Data Analytics · Automation</p>
+      </div>
+      <div class="highlight-card reveal" style="transition-delay:0.3s">
+        <span class="highlight-icon">🎓</span>
+        <h3>ACCA Education</h3>
+        <p>SBL Tutor · Strategic Business Leader · Nepal &amp; Global Rankers · BT Instructor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     EXPERIENCE SECTION
+============================================= -->
+<section id="experience" aria-label="Professional Experience">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Career</span>
+      <h2 class="section-heading">Professional Journey</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- [1] Sipradi - Chief Manager -->
+      <div class="timeline-item">
+        <div class="tl-card reveal-left">
+          <div class="tl-company">Sipradi Trading Pvt. Ltd.</div>
+          <div class="tl-role">Business Professional – Strategy &amp; Excellence</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> January 2022 – Present &nbsp;·&nbsp; Nayanaikap, Kathmandu</div>
+          <ul class="tl-bullets">
+            <li>Led establishment of a world-class Call Center for operational efficiency and enhanced CX</li>
+            <li>Conducted 360° Customer Experience Reviews, providing strategic recommendations to management</li>
+            <li>Spearheaded ISO 9001 and ISO 45001 management system development across SBUs</li>
+            <li>Designed Management Development Programs for Management Representatives (MR)</li>
+            <li>Formulated Digital Roadmap; drove automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and corporate website consulting</li>
+          </ul>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <!-- [2] Sipradi - Senior Manager -->
+      <div class="timeline-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card reveal-right">
+          <div class="tl-company">Sipradi Trading Pvt. Ltd.</div>
+          <div class="tl-role">Senior Manager, Business Strategy &amp; Excellence</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> July 2019 – January 2022 &nbsp;·&nbsp; Thapathali, Kathmandu</div>
+          <ul class="tl-bullets">
+            <li>Pioneered Remote Branch Review methodology during COVID-19 lockdown</li>
+            <li>Led external audit coordination for ISO 9001 and ISO 45001 certifications</li>
+            <li>Built Business Intelligence System with 25+ Power BI dashboards for executive insights</li>
+            <li>Led Microsoft Dynamics NAV ERP fresh start across multiple entities; implemented ERP for dealers and service centers</li>
+            <li>Digitalised Sales Opportunity Management for Commercial and Passenger Vehicle BU</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- [3] Sipradi - Manager -->
+      <div class="timeline-item">
+        <div class="tl-card reveal-left">
+          <div class="tl-company">Sipradi Trading Pvt. Ltd.</div>
+          <div class="tl-role">Manager, Systems &amp; Compliance</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> October 2015 – July 2019 &nbsp;·&nbsp; Teku, Kathmandu</div>
+          <ul class="tl-bullets">
+            <li>Led supply chain reviews across 7 companies with focus on risk, cost control, and compliance</li>
+            <li>Spearheaded OHSAS 18001 design — making Sipradi Nepal's only OHSAS-certified automobile trading company</li>
+            <li>Conducted post-implementation reviews for 30+ Navision modules; upgraded to MS Dynamics NAV 2013 R2</li>
+            <li>Designed 100+ Jet Reports and automated 50+ MIS reports for data-driven decision-making</li>
+          </ul>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <!-- [4] Sipradi - Assistant Manager -->
+      <div class="timeline-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card reveal-right">
+          <div class="tl-company">Sipradi Trading Pvt. Ltd.</div>
+          <div class="tl-role">Assistant Manager, Systems &amp; Audit</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> December 2011 – September 2015 &nbsp;·&nbsp; Naya Naikap, Kathmandu</div>
+          <ul class="tl-bullets">
+            <li>Developed ISO 9001 quality documents and Operational Policies Manual for five Sipradi companies</li>
+            <li>Provided functional consultation for Microsoft Dynamics NAV 2009 R2 implementation</li>
+            <li>Trained 500+ users in Microsoft Office, MS Dynamics NAV, and Jet Reports</li>
+            <li>Prepared Final Audit Reports for Audit Committee and Board (commended for clarity)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- [5] British College -->
+      <div class="timeline-item">
+        <div class="tl-card reveal-left">
+          <div class="tl-company">The British College, Kathmandu</div>
+          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL) &amp; Business Technology (BT)</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 2022 – Present</div>
+          <ul class="tl-bullets">
+            <li>Teaching SBL (Professional Level) and Business Technology (BT)</li>
+            <li>Nepal Rank 1st &amp; 2nd — March 2023 &amp; December 2023</li>
+            <li>Nepal 1st, World 10th — September 2024</li>
+            <li>Nepal 1st, World 19th — June 2025</li>
+          </ul>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <!-- [6] Seekshya Academy -->
+      <div class="timeline-item">
+        <div class="tl-spacer"></div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-card reveal-right">
+          <div class="tl-company">Seekshya Academy</div>
+          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL)</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> March 2025 – Present &nbsp;·&nbsp; Online</div>
+          <ul class="tl-bullets">
+            <li>Online tutoring for SBL integrating leadership, strategic thinking, governance, risk management, ethics, project delivery, and change management</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- [7] Complete Business Solutions -->
+      <div class="timeline-item">
+        <div class="tl-card reveal-left">
+          <div class="tl-company">Complete Business Solutions Pvt. Ltd.</div>
+          <div class="tl-role">Internal Auditor</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> December 2010 – November 2011 &nbsp;·&nbsp; Lalitpur</div>
+          <ul class="tl-bullets">
+            <li>Inventory and fixed asset verification across spare parts, vehicles, and fixed assets</li>
+            <li>Risk and Internal Control Review Audit — identifying discrepancies, ensuring proper asset management</li>
+          </ul>
+        </div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-spacer"></div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</section>
+
+<!-- =============================================
+     SKILLS SECTION
+============================================= -->
+<section id="skills" aria-label="Skills and Expertise">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-heading">Core Expertise</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal" style="transition-delay:0s">
+        <span class="skill-icon">🔍</span>
+        <h3>Internal Audit &amp; Risk Management</h3>
+        <p>Enterprise-wide risk reviews, audit reporting, governance frameworks, compliance, and internal control assessments.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.1s">
+        <span class="skill-icon">📋</span>
+        <h3>ISO Quality Management</h3>
+        <p>ISO 9001, ISO 45001, OHSAS 18001 implementation, management systems design, and external audit coordination.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.2s">
+        <span class="skill-icon">🎯</span>
+        <h3>Customer Experience (CX)</h3>
+        <p>360° CX reviews, Call Center setup, service efficiency optimisation, and customer centricity strategy development.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.3s">
+        <span class="skill-icon">💻</span>
+        <h3>Digital Transformation</h3>
+        <p>ERP implementation (MS Dynamics NAV), Power BI, MS Power Platform, digital roadmapping, and process automation.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.4s">
+        <span class="skill-icon">📊</span>
+        <h3>Business Intelligence &amp; Analytics</h3>
+        <p>25+ Power BI dashboards, 100+ Jet Reports, MIS automation, and real-time executive decision-support systems.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.5s">
+        <span class="skill-icon">🔗</span>
+        <h3>Supply Chain Optimisation</h3>
+        <p>Cross-company supply chain reviews, cost optimisation, risk mitigation, and compliance management.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.6s">
+        <span class="skill-icon">🎓</span>
+        <h3>Training &amp; Development</h3>
+        <p>500+ professionals trained, Soft Skills Trainer, ACCA Tutor (SBL &amp; BT), producing Nepal and global rank achievers.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.7s">
+        <span class="skill-icon">💰</span>
+        <h3>Financial Management</h3>
+        <p>ACCA-qualified financial reporting, cost control, ERP financial modules, and audit committee reporting.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.8s">
+        <span class="skill-icon">🏆</span>
+        <h3>Strategic Leadership</h3>
+        <p>Business roadmap formulation, cross-functional team leadership, C-suite advisory, and transformation programme management.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:0.9s">
+        <span class="skill-icon">🔢</span>
+        <h3>Advanced Numerology</h3>
+        <p>In-depth numerology consultations for individuals and families — life path analysis, name numerology, compatibility, and personalised guidance for life decisions.</p>
+      </div>
+      <div class="skill-card reveal" style="transition-delay:1s">
+        <span class="skill-icon">🏠</span>
+        <h3>Home Vastu Consultation</h3>
+        <p>Expert Vastu Shastra assessments for homes — space energy analysis, directional alignment, remedies, and recommendations for harmony and prosperity.</p>
+      </div>
+    </div>
+
+    <!-- Occult Science label -->
+    <div class="reveal" style="margin-top: 12px; margin-bottom: 28px;">
+      <span class="section-label" style="display:inline-flex;align-items:center;gap:10px;">
+        <span style="color:var(--accent-gold);">✦</span>
+        Occult Sciences — Advanced Numerology &amp; Home Vastu Expert
+        <span style="color:var(--accent-gold);">✦</span>
+      </span>
+    </div>
+    <div class="reveal" style="margin-top: 24px;">
+      <span class="section-label" style="margin-bottom: 16px; display:block;">Certifications &amp; Qualifications</span>
+      <div class="certs-strip">
+        <span class="cert-badge">FCCA — Fellow Chartered Certified Accountant</span>
+        <span class="cert-badge">ISO 27001 — Information Security Management</span>
+        <span class="cert-badge">Lead Auditor — QMS ISO 9001:2015 &amp; ISO 19011</span>
+        <span class="cert-badge">Advanced Diploma in Accounting &amp; Business (ACCA)</span>
+        <span class="cert-badge">Certified Soft Skills Trainer</span>
+        <span class="cert-badge">Basic Leadership — XLRI Executive Education</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ACHIEVEMENTS SECTION
+============================================= -->
+<section id="achievements" aria-label="Key Achievements">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Impact</span>
+      <h2 class="section-heading">Impact &amp; Achievements</h2>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card reveal" style="transition-delay:0s">
+        <span class="achievement-emoji">🥇</span>
+        <h3>Best Employee of the Year</h3>
+        <p>Recognised with Sipradi's prestigious Best Employee Award for outstanding contribution and leadership.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.1s">
+        <span class="achievement-emoji">🌍</span>
+        <h3>World Top-10 ACCA Ranker</h3>
+        <p>Student achieved World 10th rank in ACCA SBL under Suman's tutoring (September 2024).</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.2s">
+        <span class="achievement-emoji">🏭</span>
+        <h3>Nepal's First ISO 45001 Auto Company</h3>
+        <p>Led Sipradi to become Nepal's only ISO 45001-certified automobile trading company.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.3s">
+        <span class="achievement-emoji">📈</span>
+        <h3>Millions Saved Annually</h3>
+        <p>Supply chain cost optimisations delivering year-over-year savings across multiple entities.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.4s">
+        <span class="achievement-emoji">📊</span>
+        <h3>25+ Executive Dashboards</h3>
+        <p>Built Power BI intelligence system serving C-suite decision-making across the organisation.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.5s">
+        <span class="achievement-emoji">👥</span>
+        <h3>500+ Professionals Trained</h3>
+        <p>Delivered training in MS Office, ERP systems, and business management tools organisation-wide.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.6s">
+        <span class="achievement-emoji">🔄</span>
+        <h3>30+ ERP Modules Reviewed</h3>
+        <p>Post-implementation reviews ensuring seamless integration and adoption of ERP systems.</p>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:0.7s">
+        <span class="achievement-emoji">🎯</span>
+        <h3>Multiple Nepal Rank 1st</h3>
+        <p>ACCA students achieving top national and global ranks under Suman's guidance and mentorship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     EDUCATION SECTION
+============================================= -->
+<section id="education" aria-label="Education and Qualifications">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Academic Background</span>
+      <h2 class="section-heading">Education &amp; Qualifications</h2>
+    </div>
+
+    <div class="edu-cards">
+      <div class="edu-card reveal" style="transition-delay:0s">
+        <div class="edu-icon">🏅</div>
+        <div class="edu-info">
+          <h3>ACCA</h3>
+          <div class="edu-degree">Fellow Chartered Certified Accountant (FCCA)</div>
+          <div class="edu-year">2008 – 2011</div>
+          <div class="edu-detail">Auditing · Performance Management · Financial Management · Taxation</div>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.1s">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-info">
+          <h3>ACCA</h3>
+          <div class="edu-degree">Advanced Diploma in Accounting &amp; Business</div>
+          <div class="edu-year">2008 – 2010</div>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.2s">
+        <div class="edu-icon">🔬</div>
+        <div class="edu-info">
+          <h3>Kathmandu University</h3>
+          <div class="edu-degree">ISc. — Science &amp; Technology</div>
+          <div class="edu-year">2005 – 2007</div>
+          <div class="edu-detail">Physics · Chemistry · Biology · Mathematics · Computer Science</div>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.3s">
+        <div class="edu-icon">📚</div>
+        <div class="edu-info">
+          <h3>Golden Future Higher Secondary School</h3>
+          <div class="edu-degree">SLC — School Leaving Certificate</div>
+          <div class="edu-year">1995 – 2005</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TESTIMONIALS SECTION
+============================================= -->
+<section id="testimonials" aria-label="Testimonials">
+  <!-- Replace placeholder testimonials with real quotes -->
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-heading">What People Say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal" style="transition-delay:0s">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">Suman's ability to bridge technical complexity with strategic clarity is remarkable. His ISO implementation work transformed our entire operational approach.</p>
+        <div class="testimonial-author">
+          <strong>[Name], [Role]</strong>
+          <span>[COMPANY]</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:0.15s">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">As an ACCA tutor, Suman doesn't just teach — he inspires. His students consistently achieve top ranks because he genuinely invests in their success.</p>
+        <div class="testimonial-author">
+          <strong>[Name], [Role]</strong>
+          <span>[Organisation]</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:0.3s">
+        <div class="testimonial-quote" aria-hidden="true">"</div>
+        <p class="testimonial-text">The BI dashboards Suman designed gave us real-time visibility we never had before. It fundamentally changed how our leadership team makes decisions.</p>
+        <div class="testimonial-author">
+          <strong>[Name], [Role]</strong>
+          <span>[COMPANY]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     APPOINTMENTS SECTION
+============================================= -->
+<section id="appointments" aria-label="Book a Consultation">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Work Together</span>
+      <h2 class="section-heading">Book a Consultation</h2>
+      <p style="color:var(--text-secondary);max-width:600px;margin:20px auto 0;font-size:0.95rem;line-height:1.8;">Whether you're looking for business excellence consulting, ISO implementation guidance, digital transformation advisory, or ACCA coaching — let's connect and discuss how I can add value to your goals.</p>
+    </div>
+
+    <div class="appt-grid">
+      <div class="appt-offers reveal-left">
+        <h3>What I Offer</h3>
+        <div class="appt-offer-list">
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Business Excellence &amp; Strategy Consulting</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ISO 9001 / ISO 45001 Implementation Advisory</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Digital Transformation &amp; BI Dashboard Consulting</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Customer Experience (CX) Strategy Sessions</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ACCA SBL Coaching &amp; Mentoring (Individual/Group)</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Internal Audit &amp; Risk Management Reviews</div>
+          <div class="appt-offer-item" style="border-color:rgba(212,168,67,0.3);"><i class="fa-solid fa-star" aria-hidden="true"></i> Individual / Family Numerology Consultation</div>
+          <div class="appt-offer-item" style="border-color:rgba(212,168,67,0.3);"><i class="fa-solid fa-star" aria-hidden="true"></i> Home Vastu Consultation</div>
+        </div>
+      </div>
+
+      <div class="appt-form-wrap reveal-right">
+        <h3>Request an Appointment</h3>
+        <!-- Replace YOUR_FORM_ID with your actual Formspree form ID for free submissions at formspree.io -->
+        <form action="https://formspree.io/f/xvzwrnjl" method="POST" aria-label="Appointment request form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="appt-name">Full Name *</label>
+              <input type="text" id="appt-name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="appt-email">Email Address *</label>
+              <input type="email" id="appt-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="appt-phone">Phone Number</label>
+              <input type="tel" id="appt-phone" name="phone" placeholder="+977 9XXXXXXXXX" />
+            </div>
+            <div class="form-group">
+              <label for="appt-purpose">Purpose of Consultation</label>
+              <select id="appt-purpose" name="purpose">
+                <option value="">Select purpose…</option>
+                <option>Business Excellence Consulting</option>
+                <option>ISO Implementation Advisory</option>
+                <option>Digital Transformation Consulting</option>
+                <option>Customer Experience Strategy</option>
+                <option>ACCA SBL Coaching/Mentoring</option>
+                <option>Internal Audit / Risk Management</option>
+                <option>Individual / Family Numerology Consultation</option>
+                <option>Home Vastu Consultation</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="appt-date">Preferred Date *</label>
+              <input type="date" id="appt-date" name="preferred_date" required />
+            </div>
+            <div class="form-group">
+              <label for="appt-time">Preferred Time Slot</label>
+              <select id="appt-time" name="time_slot">
+                <option value="">Select time…</option>
+                <option>Morning (9 AM – 12 PM)</option>
+                <option>Afternoon (12 PM – 5 PM)</option>
+                <option>Evening (5 PM – 8 PM)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="appt-message">Message / Additional Details</label>
+            <textarea id="appt-message" name="message" placeholder="Tell me more about your goals or questions…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:0.75rem;">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Send Appointment Request
+          </button>
+          <p class="form-note">I typically respond within 24 hours. For urgent inquiries, reach me directly at <strong>+977 9801000918</strong>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CONTACT SECTION
+============================================= -->
+<section id="contact" aria-label="Contact">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="section-label">Let's Connect</span>
+      <h2 class="section-heading">Get In Touch</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <div class="contact-info-cards">
+          <a href="mailto:suman.sitaula@gmail.com" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-card-text">
+              <strong>Email</strong>
+              <span>suman.sitaula@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+9779801000918" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <div class="contact-card-text">
+              <strong>Phone</strong>
+              <span>+977 9801000918</span>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div class="contact-card-text">
+              <strong>Location</strong>
+              <span>Thankot, Checkpost 07, Chandragiri Municipality, Kathmandu, Nepal</span>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+            <div class="contact-card-text">
+              <strong>LinkedIn</strong>
+              <span>linkedin.com/in/sumansitaula</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-row" aria-label="Social media links">
+          <a href="https://www.linkedin.com/in/sumansitaula" id="social-linkedin" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="#" id="social-twitter" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X" style="display:none;">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://m.facebook.com/sumansitaula369/" id="social-facebook" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.youtube.com/@SumanSitaula369" id="social-youtube" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/9779801000918" id="social-whatsapp" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal-right">
+        <h3>Send a Quick Message</h3>
+        <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
+        <form action="https://formspree.io/f/xvzwrnjl" method="POST" aria-label="Contact form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" style="height:130px;" placeholder="What would you like to discuss?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+============================================= -->
+<footer aria-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px;">
+          <div class="logo-monogram">SS</div>
+          <span>Suman Sitaula</span>
+        </div>
+        <p>FCCA-qualified business excellence leader driving digital transformation, ISO excellence, and ACCA education across Nepal and beyond.</p>
+        <div class="social-row" aria-label="Footer social media links">
+          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://m.facebook.com/sumansitaula369/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@SumanSitaula369" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://wa.me/9779801000918" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#appointments">Business Consulting</a></li>
+          <li><a href="#appointments">ISO Advisory</a></li>
+          <li><a href="#appointments">Digital Transformation</a></li>
+          <li><a href="#appointments">ACCA Coaching</a></li>
+          <li><a href="#contact">Get In Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Suman Sitaula. All Rights Reserved.</span>
+      <span class="footer-tagline">Driving Excellence. Enabling Growth. Inspiring Leaders.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<!-- =============================================
+     JAVASCRIPT
+============================================= -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ─── Particles ─── */
+  (function() {
+    const container = document.getElementById('particles');
+    const count = 30;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (8 + Math.random() * 14) + 's';
+      p.style.animationDelay = (Math.random() * 12) + 's';
+      p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+      p.style.opacity = (0.2 + Math.random() * 0.5);
+      if (Math.random() > 0.6) {
+        p.style.background = '#4F8EF7';
+      }
+      container.appendChild(p);
+    }
+  })();
+
+  /* ─── Navbar scroll ─── */
+  const navbar = document.getElementById('navbar');
+  const backTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    navbar.classList.toggle('scrolled', scrollY > 40);
+    backTop.classList.toggle('visible', scrollY > 400);
+    updateActiveNav();
+  }, { passive: true });
+
+  /* ─── Active nav link ─── */
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id], .stats-strip');
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 100;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      const id = section.id;
+      if (scrollPos >= top && scrollPos < bottom) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }
+
+  /* ─── Mobile menu ─── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  /* ─── Back to top ─── */
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ─── Smooth scroll offset for fixed nav ─── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height'));
+        const top = target.getBoundingClientRect().top + window.scrollY - navH;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ─── Intersection Observer — reveals ─── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .section-heading');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible', 'animated');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ─── Counter animation ─── */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const start = performance.now();
+    function update(time) {
+      const elapsed = time - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(update);
+  }
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  /* ─── Form submission fallback (if Formspree not configured) ─── */
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      const action = this.getAttribute('action');
+      if (action && action.includes('placeholder_disabled')) {
+        e.preventDefault();
+        // Fallback: open mailto
+        const formData = new FormData(this);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const msg = formData.get('message') || formData.get('purpose') || '';
+        window.location.href = `mailto:suman.sitaula@gmail.com?subject=Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent('From: ' + name + '\nEmail: ' + email + '\n\n' + msg)}`;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
