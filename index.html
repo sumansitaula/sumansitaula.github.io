@@ -1291,8 +1291,10 @@
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 32px; align-items: center; }
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 24px; align-items: center; padding-top: calc(var(--nav-height) + 32px); padding-bottom: 40px; }
       .hero-avatar-wrap { margin: 0 auto; }
+      .hero-avatar { width: 120px; height: 120px; }
+      .hero-name { font-size: clamp(2rem, 8vw, 3rem); }
       .hero-cta { justify-content: center; }
       .stats-inner { grid-template-columns: repeat(3, 1fr); }
       .stat-item:nth-child(4), .stat-item:nth-child(5) { border-right: none; }
@@ -1388,9 +1390,8 @@
     </div>
 
     <div class="hero-text">
-      <span class="hero-pretitle">FCCA · Business Professional · ACCA Tutor</span>
       <h1 class="hero-name">SUMAN<br>SITAULA</h1>
-      <p class="hero-title">FCCA &nbsp;|&nbsp; BUSINESS PROFESSIONAL – STRATEGY &amp; EXCELLENCE</p>
+      <p class="hero-title">FCCA &nbsp;|&nbsp; ACCA Tutor &nbsp;|&nbsp; Business Strategy &amp; Excellence</p>
       <p class="hero-tagline">"Transforming Businesses Through Excellence, Data &amp; Strategy"</p>
       <p style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.22em;color:var(--accent-gold);text-transform:uppercase;margin-bottom:18px;opacity:0.85;">— The Intuitive Advisor —</p>
       <p class="hero-desc">14+ years in Automotive &amp; Allied Business &nbsp;·&nbsp; ISO Accreditations &nbsp;·&nbsp; Digital Transformation &nbsp;·&nbsp; Customer Experience &nbsp;·&nbsp; ACCA Tutor</p>
@@ -1451,7 +1452,7 @@
           <img src="profile.jpg" alt="Suman Sitaula" style="width:100%;height:100%;object-fit:cover;" />
         </div>
         <div class="about-badges" aria-label="Professional designations">
-          <div class="badge">FCCA Qualified</div>
+          <div class="badge">FCCA</div>
           <div class="badge">ISO Expert</div>
           <div class="badge">Digital Strategist</div>
           <div class="badge">ACCA SBL Tutor</div>
@@ -1480,7 +1481,7 @@
       </div>
       <div class="highlight-card reveal" style="transition-delay:0.3s">
         <span class="highlight-icon">🎓</span>
-        <h3>ACCA Education</h3>
+        <h3>ACCA Faculty</h3>
         <p>SBL Tutor · Strategic Business Leader · Nepal &amp; Global Rankers · BT Instructor</p>
       </div>
     </div>
@@ -1507,10 +1508,10 @@
           <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> January 2022 – Present &nbsp;·&nbsp; Nayanaikap, Kathmandu</div>
           <ul class="tl-bullets">
             <li>Led establishment of a world-class Call Center for operational efficiency and enhanced CX</li>
-            <li>Conducted 360° Customer Experience Reviews, providing strategic recommendations to management</li>
-            <li>Spearheaded ISO 9001 and ISO 45001 management system development across SBUs</li>
-            <li>Designed Management Development Programs for Management Representatives (MR)</li>
-            <li>Formulated Digital Roadmap; driving automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and corporate website consulting</li>
+            <li>Conducting 360° Customer Experience Reviews, providing strategic recommendations to management</li>
+            <li>Spearheading ISO 9001 and ISO 45001 management system development across SBUs</li>
+            <li>Designing Management Development Programs for Management Representatives (MR)</li>
+            <li>Formulating Digital Roadmap; driving automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and corporate website consulting</li>
           </ul>
         </div>
         <div class="tl-dot"><div class="tl-dot-inner"></div></div>
@@ -1716,9 +1717,11 @@
         <span class="cert-badge">FCCA — Fellow Chartered Certified Accountant</span>
         <span class="cert-badge">ISO 27001 — Information Security Management</span>
         <span class="cert-badge">Lead Auditor — QMS ISO 9001:2015 &amp; ISO 19011</span>
+        <span class="cert-badge">ISO 45001 — Occupational Health &amp; Safety Management</span>
         <span class="cert-badge">Advanced Diploma in Accounting &amp; Business (ACCA)</span>
         <span class="cert-badge">Certified Soft Skills Trainer</span>
         <span class="cert-badge">Basic Leadership — XLRI Executive Education</span>
+        <span class="cert-badge">Professional Vastu Consultant — Sanskar Academy</span>
       </div>
     </div>
   </div>
@@ -1884,7 +1887,6 @@
         <h3>What I Offer</h3>
         <div class="appt-offer-list">
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Business Excellence &amp; Strategy Consulting</div>
-          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ISO 9001 / ISO 45001 Implementation Advisory</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Digital Transformation &amp; BI Dashboard Consulting</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Customer Experience (CX) Strategy Sessions</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ACCA SBL Coaching &amp; Mentoring (Individual/Group)</div>
@@ -1893,6 +1895,7 @@
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> MS ETL Process Training (Power Query / Power Pivot)</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> MS Power BI Training</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Quality Management System (QMS) Training</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Occupational Health &amp; Safety Management System Training</div>
           <div class="appt-offer-item" style="border-color:rgba(212,168,67,0.3);"><i class="fa-solid fa-star" aria-hidden="true"></i> Individual / Family Numerology Consultation</div>
           <div class="appt-offer-item" style="border-color:rgba(212,168,67,0.3);"><i class="fa-solid fa-star" aria-hidden="true"></i> Home Vastu Consultation</div>
         </div>
@@ -1922,7 +1925,6 @@
               <select id="appt-purpose" name="purpose">
                 <option value="">Select purpose…</option>
                 <option>Business Excellence Consulting</option>
-                <option>ISO Implementation Advisory</option>
                 <option>Digital Transformation Consulting</option>
                 <option>Customer Experience Strategy</option>
                 <option>ACCA SBL Coaching/Mentoring</option>
@@ -1931,6 +1933,7 @@
                 <option>MS ETL Process Training (Power Query / Power Pivot)</option>
                 <option>MS Power BI Training</option>
                 <option>Quality Management System (QMS) Training</option>
+                <option>Occupational Health &amp; Safety Management System Training</option>
                 <option>Individual / Family Numerology Consultation</option>
                 <option>Home Vastu Consultation</option>
                 <option>Other</option>
