@@ -289,6 +289,33 @@
       border-bottom-color: var(--border);
       box-shadow: 0 4px 24px rgba(0,0,0,0.12);
     }
+
+    /* ── When navbar is transparent (sitting over the always-dark hero),
+          force light text so it's always readable regardless of theme ── */
+    #navbar:not(.scrolled) .nav-logo {
+      color: #EEF2FF;
+    }
+    #navbar:not(.scrolled) .nav-links a {
+      color: rgba(238,242,255,0.65);
+    }
+    #navbar:not(.scrolled) .nav-links a:hover,
+    #navbar:not(.scrolled) .nav-links a.active {
+      color: #D4A843;
+      background: rgba(212,168,67,0.1);
+    }
+    #navbar:not(.scrolled) .nav-hamburger span {
+      background: #EEF2FF;
+    }
+    #navbar:not(.scrolled) .theme-toggle {
+      color: rgba(238,242,255,0.65);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+    }
+    #navbar:not(.scrolled) .theme-toggle:hover {
+      color: #D4A843;
+      border-color: #D4A843;
+      background: rgba(212,168,67,0.1);
+    }
     .nav-inner {
       max-width: 1300px;
       margin: 0 auto;
@@ -370,6 +397,10 @@
     .theme-toggle .icon-moon { display: block; }
     [data-theme="light"] .theme-toggle .icon-sun { display: block; }
     [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+    @media (prefers-color-scheme: light) {
+      html:not([data-theme="dark"]) .theme-toggle .icon-sun { display: block; }
+      html:not([data-theme="dark"]) .theme-toggle .icon-moon { display: none; }
+    }
 
     .nav-hamburger {
       display: none;
