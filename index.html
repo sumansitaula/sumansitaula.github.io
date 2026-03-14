@@ -169,8 +169,10 @@
     img { max-width: 100%; display: block; transition: none; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
     input, select, textarea { font-family: inherit; }
+    /* Exclude navbar from the global bg-color transition to prevent flash */
+    #navbar { transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important; }
 
     /* SCROLLBAR */
     ::-webkit-scrollbar { width: 6px; }
@@ -279,8 +281,9 @@
       height: var(--nav-height);
       display: flex;
       align-items: center;
-      transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+      background: transparent;
       border-bottom: 1px solid transparent;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
     #navbar.scrolled {
       background: var(--glass);
@@ -1456,8 +1459,10 @@
       <span></span><span></span><span></span>
     </button>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
-      <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
-      <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+      <!-- Sun icon (shown in dark mode → click to go light) -->
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <!-- Moon icon (shown in light mode → click to go dark) -->
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     </button>
   </div>
 </nav>
@@ -1474,8 +1479,8 @@
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   <div class="mobile-menu-bottom">
     <button class="theme-toggle" id="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle theme">
-      <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
-      <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     </button>
   </div>
 </div>
