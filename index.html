@@ -44,14 +44,46 @@
   </script>
 
   <!-- SEO Meta Tags -->
-  <title>Suman Sitaula | FCCA | Business Excellence & Strategy Leader | ACCA Tutor | Nepal</title>
-  <meta name="description" content="Suman Sitaula – FCCA qualified professional with 15+ years in Business Excellence, ISO Accreditations, Digital Transformation, Customer Experience, and ACCA tutoring in Nepal." />
-  <meta name="keywords" content="Suman Sitaula, FCCA Nepal, Business Excellence, ISO 9001, ISO 45001, Digital Transformation, ACCA Tutor SBL, Customer Experience, Internal Audit, Kathmandu" />
-  <meta property="og:title" content="Suman Sitaula | Business Excellence Leader" />
-  <meta property="og:description" content="FCCA-qualified leader driving business transformation, ISO excellence, and ACCA education in Nepal." />
+  <title>Suman Sitaula | FCCA | Business Excellence, Digital Transformation &amp; AI Enthusiast | Nepal</title>
+  <meta name="description" content="FCCA-qualified business excellence leader &amp; ACCA tutor in Nepal. Specialising in ISO, ERP, Power BI, AI adoption and digital transformation with 15+ years experience." />
+  <meta name="keywords" content="Suman Sitaula, FCCA Nepal, Business Excellence Consultant Kathmandu, ACCA Tutor SBL Nepal, ISO 9001 Consultant Nepal, Power BI Consultant Nepal, Digital Transformation Nepal, ERP Implementation Nepal, AI Adoption Finance Professional Nepal, Vastu Consultant Kathmandu" />
+  <meta property="og:title" content="Suman Sitaula | FCCA | Business Excellence &amp; Digital Transformation Leader" />
+  <meta property="og:description" content="FCCA-qualified leader at the intersection of finance, technology and education. 15+ years driving business transformation, ISO excellence, and ACCA education in Nepal." />
   <meta property="og:image" content="profile.jpg" />
+  <meta property="og:url" content="https://sumansitaula.github.io" />
+  <meta property="og:type" content="website" />
   <meta name="author" content="Suman Sitaula" />
   <meta name="robots" content="index, follow" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suman Sitaula",
+    "jobTitle": "Chief Manager – Business Strategy & Excellence",
+    "description": "FCCA-qualified business excellence leader, ACCA tutor, and digital transformation consultant based in Kathmandu, Nepal.",
+    "url": "https://sumansitaula.github.io",
+    "image": "https://sumansitaula.github.io/profile.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/sumansitaula",
+      "https://m.facebook.com/sumansitaula369/",
+      "https://www.youtube.com/@SumanSitaula369"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kathmandu",
+      "addressCountry": "NP"
+    },
+    "email": "suman.sitaula@gmail.com",
+    "telephone": "+977-9801000918",
+    "knowsAbout": ["Business Excellence", "ISO 9001", "ISO 45001", "Digital Transformation", "Power BI", "ACCA", "ERP Implementation", "Numerology", "Vastu"],
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "ACCA"
+    }
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,11 +105,13 @@
       --accent-gold:     #D4A843;
       --accent-gold-lt:  #F5C842;
       --accent-electric: #4F8EF7;
+      --accent-teal:     #0EA5A0;
       --text-primary:    #EEF2FF;
       --text-secondary:  #94A3C0;
       --border:          #1E2B46;
       --gradient:        linear-gradient(135deg, #D4A843, #F5C842);
       --gradient-blue:   linear-gradient(135deg, #4F8EF7, #7EB3FF);
+      --gradient-teal:   linear-gradient(135deg, #0EA5A0, #06BFB8);
       --shadow-gold:     0 0 40px rgba(212,168,67,0.15);
       --shadow-card:     0 8px 32px rgba(0,0,0,0.4);
       --font-serif:      'Cormorant Garamond', Georgia, serif;
@@ -120,6 +154,7 @@
       --accent-gold:     #D4A843;
       --accent-gold-lt:  #F5C842;
       --accent-electric: #4F8EF7;
+      --accent-teal:     #0EA5A0;
       --text-primary:    #EEF2FF;
       --text-secondary:  #94A3C0;
       --border:          #1E2B46;
@@ -127,6 +162,7 @@
       --shadow-card:     0 8px 32px rgba(0,0,0,0.4);
       --glass:           rgba(20,27,46,0.7);
       --gradient:        linear-gradient(135deg, #D4A843, #F5C842);
+      --gradient-teal:   linear-gradient(135deg, #0EA5A0, #06BFB8);
     }
 
     /* FORCED LIGHT THEME */
@@ -138,6 +174,7 @@
       --accent-gold:     #A8710E;
       --accent-gold-lt:  #C98F1A;
       --accent-electric: #1D4ED8;
+      --accent-teal:     #0D7874;
       --text-primary:    #0B1221;
       --text-secondary:  #4A5778;
       --border:          #CDD3E8;
@@ -145,6 +182,7 @@
       --shadow-card:     0 4px 20px rgba(0,0,0,0.08);
       --glass:           rgba(255,255,255,0.8);
       --gradient:        linear-gradient(135deg, #A8710E, #C98F1A);
+      --gradient-teal:   linear-gradient(135deg, #0D7874, #0EA5A0);
     }
 
     /* Hero always dark regardless of theme */
@@ -164,6 +202,14 @@
       margin: 0;
       padding: 0;
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    /* Exclude navbar from global bg transition — it manages its own */
+    #navbar, #navbar * {
+      transition: none;
+    }
+    /* Re-enable hover transitions for interactive nav elements only */
+    .nav-links a, .theme-toggle, .nav-hamburger span {
+      transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
     }
     html { scroll-behavior: smooth; font-size: 17px; }
     body {
@@ -289,12 +335,12 @@
       height: var(--nav-height);
       display: flex;
       align-items: center;
-      background: transparent;
+      background: transparent !important;
       border-bottom: 1px solid transparent;
       transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
     #navbar.scrolled {
-      background: var(--glass);
+      background: var(--glass) !important;
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom-color: var(--border);
@@ -1437,6 +1483,310 @@
       .hero-name { font-size: clamp(2rem, 11vw, 2.8rem); }
       .about-badges { display: none; }
     }
+
+    /* =============================================
+       CURRENTLY EXPLORING STRIP
+    ============================================= */
+    .exploring-strip {
+      background: linear-gradient(135deg, rgba(14,165,160,0.08), rgba(79,142,247,0.06));
+      border-top: 1px solid rgba(14,165,160,0.2);
+      border-bottom: 1px solid rgba(14,165,160,0.2);
+      padding: 18px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .exploring-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .exploring-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .exploring-label::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .exploring-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .exploring-tag {
+      background: rgba(14,165,160,0.1);
+      border: 1px solid rgba(14,165,160,0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--accent-teal);
+      transition: all 0.25s ease;
+    }
+    .exploring-tag:hover {
+      background: rgba(14,165,160,0.18);
+      border-color: var(--accent-teal);
+    }
+
+    /* =============================================
+       TECHNOLOGY INTERESTS SECTION
+    ============================================= */
+    #technology { background: var(--bg-secondary); }
+    .tech-intro {
+      max-width: 640px;
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-top: 20px;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .tech-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: var(--shadow-card);
+    }
+    .tech-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gradient-teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .tech-card:hover::before { transform: scaleX(1); }
+    .tech-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(14,165,160,0.35);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 30px rgba(14,165,160,0.1);
+    }
+    .tech-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .tech-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .tech-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .tech-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-teal);
+      border: 1px solid rgba(14,165,160,0.3);
+      border-radius: 100px;
+      padding: 3px 10px;
+    }
+
+    /* =============================================
+       PROJECTS SECTION
+    ============================================= */
+    #projects { background: var(--bg-primary); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.35);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.25);
+    }
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .project-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .project-status {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .status-complete {
+      background: rgba(212,168,67,0.1);
+      color: var(--accent-gold);
+      border: 1px solid rgba(212,168,67,0.3);
+    }
+    .status-ongoing {
+      background: rgba(14,165,160,0.1);
+      color: var(--accent-teal);
+      border: 1px solid rgba(14,165,160,0.3);
+    }
+    .project-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      flex-grow: 1;
+    }
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.07em;
+      color: var(--accent-electric);
+      background: rgba(79,142,247,0.08);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: 100px;
+      padding: 3px 10px;
+    }
+
+    /* =============================================
+       INSIGHTS / BLOG SECTION
+    ============================================= */
+    #insights { background: var(--bg-secondary); }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .insight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.35s ease, border-color 0.35s ease;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.35);
+    }
+    .insight-card-top {
+      padding: 28px 26px 20px;
+      flex-grow: 1;
+    }
+    .insight-category {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .insight-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      color: var(--text-primary);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .insight-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .insight-card-bottom {
+      padding: 16px 26px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .insight-date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.06em;
+    }
+    .insight-read-more {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.25s ease;
+    }
+    .insight-card:hover .insight-read-more { gap: 10px; }
+
+    /* Responsive new sections */
+    @media (max-width: 1024px) {
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .tech-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .exploring-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1461,10 +1811,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ul class="nav-links" role="list">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#technology">Technology</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#insights">Insights</a></li>
       <li><a href="#appointments">Appointments</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1484,10 +1836,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
   <a href="#home" onclick="closeMobileMenu()">Home</a>
   <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#technology" onclick="closeMobileMenu()">Technology</a>
   <a href="#experience" onclick="closeMobileMenu()">Experience</a>
+  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
   <a href="#skills" onclick="closeMobileMenu()">Skills</a>
   <a href="#achievements" onclick="closeMobileMenu()">Achievements</a>
-  <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="#insights" onclick="closeMobileMenu()">Insights</a>
   <a href="#appointments" onclick="closeMobileMenu()">Appointments</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   <div class="mobile-menu-bottom">
@@ -1519,19 +1873,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-text">
       <h1 class="hero-name">SUMAN<br>SITAULA</h1>
       <p class="hero-title">FCCA &nbsp;|&nbsp; ACCA Tutor &nbsp;|&nbsp; Business Strategy &amp; Excellence</p>
-      <p class="hero-tagline">"Transforming Businesses Through Excellence, Data &amp; Strategy"</p>
+      <p class="hero-tagline">"Transforming Businesses Through Financial Intelligence &amp; Digital Innovation"</p>
       <p class="hero-intuitive">— The Intuitive Advisor —</p>
-      <p class="hero-desc">15+ years in Automotive &amp; Allied Business &nbsp;·&nbsp; ISO Accreditations &nbsp;·&nbsp; Digital Transformation &nbsp;·&nbsp; Customer Experience</p>
+      <p class="hero-desc">A finance professional with a technology heart — 15+ years bridging financial rigour, operational excellence, and digital curiosity across Nepal's leading organisations.</p>
       <div class="hero-cta">
         <a href="#appointments" class="btn btn-gold">
           <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-          Book an Appointment
+          Book a Consultation
         </a>
-        <!-- CV download hidden — uncomment to re-enable when ready -->
-        <!-- <a href="CV_Suman_Sitaula.pdf" class="btn btn-outline" download>
-          <i class="fa-solid fa-download" aria-hidden="true"></i>
-          Download CV
-        </a> -->
+        <a href="#technology" class="btn btn-outline">
+          <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          My Tech Interests
+        </a>
       </div>
     </div>
   </div>
@@ -1563,6 +1916,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<!-- Currently Exploring Strip -->
+<div class="exploring-strip" aria-label="Currently exploring">
+  <div class="exploring-inner">
+    <span class="exploring-label">Currently Exploring</span>
+    <div class="exploring-tags">
+      <span class="exploring-tag">AI Prompting &amp; Tools</span>
+      <span class="exploring-tag">Power Automate</span>
+      <span class="exploring-tag">CISA Preparation</span>
+      <span class="exploring-tag">Data Storytelling</span>
+      <span class="exploring-tag">Generative AI for Business</span>
+      <span class="exploring-tag">Digital Transformation Strategy</span>
+    </div>
+  </div>
+</div>
+
 <!-- =============================================
      ABOUT SECTION
 ============================================= -->
@@ -1588,10 +1956,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="about-bio reveal-right">
         <span class="section-label">My Story</span>
-        <h2 class="section-heading" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A Leader at the Intersection of<br>Strategy, Systems &amp; Excellence</h2>
-        <p style="margin-top:24px;">A result-driven ACCA-qualified professional with 15+ years of experience in Automotive and Allied Business, specialising in Internal Audit, Enterprise Risk Management, Operational Excellence, Customer Experience, and Digital Transformation.</p>
-        <p>Adept at driving strategic decision-making, optimising business processes, and implementing cutting-edge technologies to enhance financial and operational performance. Known for building world-class systems, coaching top-ranked ACCA professionals, and delivering measurable impact across organisations.</p>
-        <p>A Certified Soft Skills Trainer with 10+ years of hands-on training experience in MS Excel, Power Query, Power Pivot, Power BI, and Quality Management Systems — empowering professionals with the tools and mindset to excel.</p>
+        <h2 class="section-heading" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A Finance Professional<br>with a Technology Heart</h2>
+        <p style="margin-top:24px;">My career began in internal audit and compliance — but I was never just about the numbers. I was always asking: <em style="color:var(--accent-gold);">why do we do this manually when technology could do it better?</em> That question has shaped every role I have held.</p>
+        <p>Over 15+ years at the intersection of finance, strategy, and digital transformation, I have led ISO accreditations, deployed enterprise ERP systems, built executive BI dashboards, and formulated corporate digital roadmaps — while simultaneously teaching ACCA's most strategic paper to professionals who go on to achieve world rankings.</p>
+        <p>I hold the FCCA qualification — one of the most respected accounting credentials globally — and I am a Certified Soft Skills Trainer with deep hands-on experience in Power BI, Power Platform, MS Excel, and QMS. I am not a programmer, but I believe every business leader today must understand the language of technology.</p>
       </div>
     </div>
 
@@ -1610,6 +1978,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="highlight-icon">🎓</span>
         <h3>ACCA Faculty</h3>
         <p>SBL Tutor · Strategic Business Leader · Nepal &amp; Global Rankers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TECHNOLOGY INTERESTS SECTION
+============================================= -->
+<section id="technology" aria-label="Technology Interests">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="section-label">Digital Curiosity</span>
+      <h2 class="section-heading">Technology Interests</h2>
+      <p class="tech-intro">I am not a programmer by profession — but I am deeply curious about how technology is reshaping business, finance, and decision-making. These are the areas I actively explore, learn, and apply in my work.</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-card reveal" style="transition-delay:0s">
+        <span class="tech-icon">🤖</span>
+        <h3>Artificial Intelligence</h3>
+        <p>Exploring how AI tools like Claude, ChatGPT, and Copilot can enhance business analysis, automate reporting, and support strategic decision-making — without requiring programming skills.</p>
+        <span class="tech-tag">Active Exploration</span>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.1s">
+        <span class="tech-icon">⚡</span>
+        <h3>Process Automation</h3>
+        <p>Using Microsoft Power Automate and Power Platform to eliminate repetitive manual tasks, connect business systems, and create intelligent workflows that save time and reduce errors.</p>
+        <span class="tech-tag">Applied at Work</span>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.2s">
+        <span class="tech-icon">📊</span>
+        <h3>Data Analytics &amp; BI</h3>
+        <p>Designing Power BI dashboards that translate raw business data into clear visual stories — helping leaders make faster, more confident decisions based on real-time intelligence.</p>
+        <span class="tech-tag">Expert Level</span>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.3s">
+        <span class="tech-icon">🔗</span>
+        <h3>ERP &amp; Business Systems</h3>
+        <p>Leading Microsoft Dynamics NAV implementations that transform fragmented, paper-based operations into connected, system-driven organisations with full data visibility.</p>
+        <span class="tech-tag">Led Implementation</span>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.4s">
+        <span class="tech-icon">🛡️</span>
+        <h3>ISO &amp; Quality Systems</h3>
+        <p>Building management systems that go beyond compliance — genuinely improving how organisations operate, manage risk, and serve their customers more effectively.</p>
+        <span class="tech-tag">Expert Level</span>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.5s">
+        <span class="tech-icon">🔐</span>
+        <h3>Information Security</h3>
+        <p>Exploring ISO 27001 and CISA frameworks to understand how organisations protect their digital assets, manage cybersecurity risk, and ensure data governance in an increasingly connected world.</p>
+        <span class="tech-tag">Currently Learning</span>
       </div>
     </div>
   </div>
@@ -1749,13 +2169,143 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- =============================================
+     PROJECTS SECTION
+============================================= -->
+<section id="projects" aria-label="Projects and Initiatives">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Work &amp; Explorations</span>
+      <h2 class="section-heading">Projects &amp; Initiatives</h2>
+      <p style="color:var(--text-secondary);max-width:580px;margin:20px auto 0;font-size:0.97rem;line-height:1.85;">A selection of significant initiatives I have led, contributed to, or am actively exploring — spanning enterprise transformation, digital tools, and intellectual curiosity.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card reveal" style="transition-delay:0s">
+        <div class="project-header">
+          <span class="project-icon">🖥️</span>
+          <span class="project-status status-complete">Completed</span>
+        </div>
+        <h3>Sipradi ERP Transformation</h3>
+        <p>Led end-to-end Microsoft Dynamics NAV deployment across Sipradi Companies — transforming paper-based operations into a fully system-driven organisation through phased ERP rollout, dealer integration, and module reviews.</p>
+        <div class="project-tags">
+          <span class="project-tag">ERP</span>
+          <span class="project-tag">MS Dynamics NAV</span>
+          <span class="project-tag">Sipradi</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.1s">
+        <div class="project-header">
+          <span class="project-icon">📊</span>
+          <span class="project-status status-complete">Completed</span>
+        </div>
+        <h3>Executive BI Dashboard System</h3>
+        <p>Designed and built 25+ Power BI dashboards providing C-suite leadership with real-time business intelligence — fundamentally changing how strategic decisions are made across the organisation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">Analytics</span>
+          <span class="project-tag">Executive Reporting</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.2s">
+        <div class="project-header">
+          <span class="project-icon">🗺️</span>
+          <span class="project-status status-ongoing">Ongoing</span>
+        </div>
+        <h3>Corporate Digital Roadmap</h3>
+        <p>Formulated Sipradi's enterprise digital transformation strategy — including automation via eGuru/GTME, Sales Docket, Sipradi Stars loyalty ecosystem, and the TEM Excellence Center initiative.</p>
+        <div class="project-tags">
+          <span class="project-tag">Digital Strategy</span>
+          <span class="project-tag">Automation</span>
+          <span class="project-tag">CX</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.3s">
+        <div class="project-header">
+          <span class="project-icon">🏭</span>
+          <span class="project-status status-complete">Completed</span>
+        </div>
+        <h3>ISO Accreditation Programme</h3>
+        <p>Led 5+ ISO certifications including making Sipradi Nepal's first ISO 45001-certified automobile trading company — building management systems that genuinely improve operations beyond compliance.</p>
+        <div class="project-tags">
+          <span class="project-tag">ISO 9001</span>
+          <span class="project-tag">ISO 45001</span>
+          <span class="project-tag">OHS</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.4s">
+        <div class="project-header">
+          <span class="project-icon">🎓</span>
+          <span class="project-status status-ongoing">Ongoing</span>
+        </div>
+        <h3>ACCA SBL Teaching Framework</h3>
+        <p>Developed a structured teaching approach for ACCA's Strategic Business Leadership paper — producing students who achieve Nepal Rank 1st and World Top-10 positions consistently since 2023.</p>
+        <div class="project-tags">
+          <span class="project-tag">ACCA</span>
+          <span class="project-tag">SBL</span>
+          <span class="project-tag">Education</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.5s">
+        <div class="project-header">
+          <span class="project-icon">🤖</span>
+          <span class="project-status status-ongoing">Ongoing</span>
+        </div>
+        <h3>AI Tools for Business Exploration</h3>
+        <p>Actively exploring how Claude, ChatGPT, and Copilot can be applied to business analysis, document creation, reporting automation, and strategic decision support — without needing to write a single line of code.</p>
+        <div class="project-tags">
+          <span class="project-tag">AI</span>
+          <span class="project-tag">Automation</span>
+          <span class="project-tag">Exploration</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.6s">
+        <div class="project-header">
+          <span class="project-icon">🔢</span>
+          <span class="project-status status-ongoing">Ongoing</span>
+        </div>
+        <h3>Numerology &amp; Vastu Advisory</h3>
+        <p>Providing individual and family numerology consultations and home Vastu assessments — applying ancient analytical frameworks as lenses for personal and organisational decision-making.</p>
+        <div class="project-tags">
+          <span class="project-tag">Numerology</span>
+          <span class="project-tag">Vastu</span>
+          <span class="project-tag">Consulting</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="transition-delay:0.7s">
+        <div class="project-header">
+          <span class="project-icon">🌐</span>
+          <span class="project-status status-complete">Completed</span>
+        </div>
+        <h3>This Website</h3>
+        <p>Designed and built this professional personal website using AI-assisted development — a practical demonstration of how non-developers can leverage modern AI tools to create production-ready digital products.</p>
+        <div class="project-tags">
+          <span class="project-tag">AI-Assisted</span>
+          <span class="project-tag">Web Design</span>
+          <span class="project-tag">Personal Brand</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
      SKILLS SECTION
 ============================================= -->
 <section id="skills" aria-label="Skills and Expertise">
   <div class="container">
     <div class="section-intro reveal">
-      <span class="section-label">Expertise</span>
+      <span class="section-label">What I Bring</span>
       <h2 class="section-heading">Core Expertise</h2>
+      <p style="color:var(--text-secondary);max-width:580px;margin:16px 0 0;font-size:0.97rem;line-height:1.85;">Across 15+ years, I have developed a rare combination of financial rigour, operational expertise, and technology enthusiasm. Here is what I offer.</p>
     </div>
 
     <div class="skills-grid">
@@ -1962,6 +2512,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- =============================================
+     INSIGHTS SECTION
+============================================= -->
+<section id="insights" aria-label="Insights and Perspectives">
+  <div class="container">
+    <div class="section-intro section-center reveal">
+      <span class="section-label">Thought Leadership</span>
+      <h2 class="section-heading">Insights &amp; Perspectives</h2>
+      <p style="color:var(--text-secondary);max-width:560px;margin:18px auto 0;font-size:0.97rem;line-height:1.85;">Reflections on business, technology, and the intersection of both — from a practitioner who has seen these worlds converge in practice.</p>
+    </div>
+
+    <div class="insights-grid">
+
+      <div class="insight-card reveal" style="transition-delay:0s">
+        <div class="insight-card-top">
+          <span class="insight-category">Finance &amp; Technology</span>
+          <h3>What ACCA Taught Me About Technology Adoption</h3>
+          <p>Financial rigour and technology evaluation share more in common than most people realise. The same analytical discipline I applied to audit and risk management now guides how I assess new digital tools — with discipline, not hype.</p>
+        </div>
+        <div class="insight-card-bottom">
+          <span class="insight-date">Coming Soon</span>
+          <span class="insight-read-more">Read More →</span>
+        </div>
+      </div>
+
+      <div class="insight-card reveal" style="transition-delay:0.15s">
+        <div class="insight-card-top">
+          <span class="insight-category">Business Intelligence</span>
+          <h3>How Power BI Changed the Way Our Leadership Makes Decisions</h3>
+          <p>Before dashboards, decisions were based on last month's reports. After 25+ executive dashboards at Sipradi, leadership shifted from reactive to proactive — a practical story of data transformation in action.</p>
+        </div>
+        <div class="insight-card-bottom">
+          <span class="insight-date">Coming Soon</span>
+          <span class="insight-read-more">Read More →</span>
+        </div>
+      </div>
+
+      <div class="insight-card reveal" style="transition-delay:0.3s">
+        <div class="insight-card-top">
+          <span class="insight-category">AI &amp; The Future</span>
+          <h3>Why Every Finance Professional Should Understand AI</h3>
+          <p>You do not need to write code to benefit from AI. In this piece, I explore how finance professionals can leverage AI tools to enhance reporting, improve analysis, and stay relevant in an increasingly automated world.</p>
+        </div>
+        <div class="insight-card-bottom">
+          <span class="insight-date">Coming Soon</span>
+          <span class="insight-read-more">Read More →</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:40px;">
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:16px;">Follow my professional updates and articles on LinkedIn</p>
+      <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="display:inline-flex;">
+        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        Follow on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
      TESTIMONIALS SECTION
 ============================================= -->
 <section id="testimonials" aria-label="Testimonials">
@@ -2009,7 +2620,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-intro section-center reveal">
       <span class="section-label">Work Together</span>
       <h2 class="section-heading">Book a Consultation</h2>
-      <p style="color:var(--text-secondary);max-width:600px;margin:20px auto 0;font-size:0.95rem;line-height:1.8;">Whether you're looking for business excellence consulting, ISO implementation guidance, digital transformation advisory, or ACCA coaching — let's connect and discuss how I can add value to your goals.</p>
+      <p style="color:var(--text-secondary);max-width:600px;margin:20px auto 0;font-size:0.97rem;line-height:1.85;">Whether you are looking for business excellence consulting, digital transformation guidance, professional training, or ACCA coaching — let's connect and explore how I can add value to your goals.</p>
     </div>
 
     <div class="appt-grid">
@@ -2109,6 +2720,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-intro reveal">
       <span class="section-label">Let's Connect</span>
       <h2 class="section-heading">Get In Touch</h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:16px 0 0;font-size:0.97rem;line-height:1.85;">Whether you are looking for consulting, training, coaching, or just want to exchange ideas on technology and business — I am always open to a good conversation.</p>
     </div>
 
     <div class="contact-grid">
@@ -2201,7 +2813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="logo-monogram">SS</div>
           <span>Suman Sitaula</span>
         </div>
-        <p>FCCA-qualified business excellence leader driving digital transformation, ISO excellence, and ACCA education across Nepal and beyond.</p>
+        <p>FCCA-qualified business excellence leader and ACCA tutor at the intersection of finance, technology, and education — driving digital transformation across Nepal and beyond.</p>
         <div class="social-row" aria-label="Footer social media links">
           <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
           <a href="https://m.facebook.com/sumansitaula369/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
@@ -2214,9 +2826,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
+          <li><a href="#technology">Technology</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#insights">Insights</a></li>
         </ul>
       </div>
       <div class="footer-col">
