@@ -2630,8 +2630,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Business Excellence &amp; Strategy Consulting</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Digital Transformation &amp; BI Dashboard Consulting</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Customer Experience (CX) Strategy Sessions</div>
-          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ACCA SBL Coaching &amp; Mentoring (Individual/Group)</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> Internal Audit &amp; Risk Management Consulting</div>
+          <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> ACCA SBL Tutoring</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> MS Excel Training</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> MS ETL Process Training (Power Query / Power Pivot)</div>
           <div class="appt-offer-item"><i class="fa-solid fa-check" aria-hidden="true"></i> MS Power BI Training</div>
@@ -2667,8 +2667,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <option>Business Excellence Consulting</option>
                 <option>Digital Transformation Consulting</option>
                 <option>Customer Experience Strategy</option>
-                <option>ACCA SBL Coaching/Mentoring</option>
                 <option>Internal Audit &amp; Risk Management Consulting</option>
+                <option>ACCA SBL Tutoring</option>
                 <option>MS Excel Training</option>
                 <option>MS ETL Process Training (Power Query / Power Pivot)</option>
                 <option>MS Power BI Training</option>
@@ -2858,6 +2858,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      JAVASCRIPT
 ============================================= -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ─── Clean tracking parameters from URL (fbclid, utm_*, etc.) ─── */
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const tracking = ['fbclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','mc_cid','mc_eid'];
+    let changed = false;
+    tracking.forEach(p => { if (params.has(p)) { params.delete(p); changed = true; } });
+    if (changed) {
+      const clean = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+      window.history.replaceState({}, '', clean);
+    }
+  })();
+
   /* ─── Theme Toggle ─── */
   function toggleTheme() {
     const html = document.documentElement;
