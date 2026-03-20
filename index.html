@@ -1477,9 +1477,12 @@
     * { box-sizing: border-box; max-width: 100%; }
     img, picture, video, canvas, svg { max-width: 100%; }
 
-    @media (max-width: 1024px) {
+    @media (min-width: 601px) and (max-width: 1024px) {
       .skills-grid { grid-template-columns: repeat(2, 1fr); }
       .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .insights-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 900px) {
@@ -1522,11 +1525,18 @@
       /* Container */
       .container { padding: 0 18px; width: 100%; }
 
-      /* About */
-      .about-grid { grid-template-columns: 1fr; }
+      /* All content grids — single column */
+      .about-grid,
+      .skills-grid,
+      .achievements-grid,
+      .highlight-cards,
+      .tech-grid,
+      .projects-grid,
+      .insights-grid,
+      .testimonials-grid,
+      .edu-cards { grid-template-columns: 1fr !important; }
       .about-photo { max-width: 240px; margin: 0 auto; }
       .about-badges { display: none; }
-      .highlight-cards { grid-template-columns: 1fr; }
 
       /* Timeline */
       .timeline { width: 100%; }
@@ -1542,17 +1552,10 @@
       /* Forms & layouts */
       .appt-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .edu-cards { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .appt-form-wrap { padding: 22px 18px; }
       .contact-form-wrap { padding: 22px 18px; }
-
-      /* New sections */
-      .tech-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .insights-grid { grid-template-columns: 1fr; }
       .exploring-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
 
       /* Section spacing */
