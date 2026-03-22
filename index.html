@@ -1872,6 +1872,106 @@
     .insight-card:hover .insight-read-more { gap: 10px; }
 
 
+
+    /* =============================================
+       LEADERSHIP PHILOSOPHY SECTION
+    ============================================= */
+    #philosophy { background: var(--bg-primary); }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .philosophy-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.35s ease, border-color 0.35s ease;
+    }
+    .philosophy-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--gradient);
+    }
+    .philosophy-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212,168,67,0.35);
+    }
+    .philosophy-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .philosophy-card p {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.85;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.35s ease;
+    }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,67,0.35);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25), var(--shadow-gold);
+    }
+    .value-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .value-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    @media (max-width: 1024px) {
+      .values-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1896,7 +1996,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ul class="nav-links" role="list">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#technology">Technology</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -1921,6 +2021,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
   <a href="#home" onclick="closeMobileMenu()">Home</a>
   <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#philosophy" onclick="closeMobileMenu()">Philosophy</a>
   <a href="#technology" onclick="closeMobileMenu()">Technology</a>
   <a href="#experience" onclick="closeMobileMenu()">Experience</a>
   <a href="#projects" onclick="closeMobileMenu()">Projects</a>
@@ -2067,6 +2168,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="highlight-icon">🎓</span>
         <h3>ACCA Faculty</h3>
         <p>SBL Tutor · Strategic Business Leader · Nepal &amp; Global Rankers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     LEADERSHIP PHILOSOPHY SECTION
+============================================= -->
+<section id="philosophy" aria-label="Personal Leadership Philosophy">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="section-label">Guiding Principles</span>
+      <h2 class="section-heading">Personal Leadership Philosophy</h2>
+    </div>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card reveal" style="transition-delay:0s">
+        <span class="philosophy-card-label">🔭 Vision Statement</span>
+        <p>To be a catalyst for digital transformation and strategic excellence, creating value for customers, empowering teams, and shaping sustainable business futures.</p>
+      </div>
+      <div class="philosophy-card reveal" style="transition-delay:0.15s">
+        <span class="philosophy-card-label">🎯 Mission Statement</span>
+        <p>To lead with purpose by integrating strategic thinking, digital innovation, and business insights, delivering measurable impact across operations, experience, and growth.</p>
+      </div>
+    </div>
+
+    <div class="section-center reveal" style="margin-bottom:32px;">
+      <span class="section-label">Core Values</span>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal" style="transition-delay:0s">
+        <span class="value-icon">⭐</span>
+        <h3>Excellence</h3>
+        <p>Upholding the highest standards in strategy, execution, and results.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.1s">
+        <span class="value-icon">🤝</span>
+        <h3>Integrity</h3>
+        <p>Acting with accountability, transparency, and ethical commitment.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.2s">
+        <span class="value-icon">💡</span>
+        <h3>Innovation</h3>
+        <p>Embracing change and driving forward-thinking digital solutions.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.3s">
+        <span class="value-icon">❤️</span>
+        <h3>Customer-Centricity</h3>
+        <p>Designing experiences and strategies that put people, customers and teams at the center.</p>
+      </div>
+      <div class="value-card reveal" style="transition-delay:0.4s">
+        <span class="value-icon">📚</span>
+        <h3>Continuous Learning</h3>
+        <p>Evolving through reflection, feedback, and lifelong curiosity.</p>
       </div>
     </div>
   </div>
