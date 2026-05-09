@@ -281,7 +281,7 @@
       align-items: center;
       justify-content: center;
       gap: 28px;
-      transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), visibility 0.8s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .loader-monogram {
@@ -446,35 +446,51 @@
     .section-intro { margin-bottom: 80px; }
 
     /* ═══════════════════════════════════════════
-       CINEMATIC REVEAL ANIMATIONS
+       REVEAL ANIMATIONS — Fade · Blur · Lift
     ═══════════════════════════════════════════ */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      transform: translateY(18px) scale(0.985);
+      filter: blur(4px);
+      transition: opacity 0.75s ease, transform 0.75s ease, filter 0.75s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
 
     .reveal-left {
       opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      transform: translateY(12px) scale(0.98);
+      filter: blur(3px);
+      transition: opacity 0.75s ease, transform 0.75s ease, filter 0.75s ease;
     }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
 
     .reveal-right {
       opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      transform: translateY(12px) scale(0.98);
+      filter: blur(3px);
+      transition: opacity 0.75s ease, transform 0.75s ease, filter 0.75s ease;
     }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
 
     .reveal-scale {
       opacity: 0;
-      transform: scale(0.92);
-      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+      transform: scale(0.94);
+      filter: blur(6px);
+      transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
     }
-    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); filter: blur(0); }
 
     /* ═══════════════════════════════════════════
        NAVIGATION
@@ -646,20 +662,9 @@
       overflow: hidden;
     }
 
-    /* Cinematic letterbox bars */
+    /* Hero entry — clean fade-in (no letterbox bars) */
     .hero-letterbox-top,
-    .hero-letterbox-bottom {
-      position: absolute;
-      left: 0; right: 0;
-      height: 60px;
-      background: #030508;
-      z-index: 5;
-      transition: height 1.4s cubic-bezier(0.77,0,0.175,1);
-    }
-    .hero-letterbox-top { top: 0; }
-    .hero-letterbox-bottom { bottom: 0; }
-    body.loaded .hero-letterbox-top,
-    body.loaded .hero-letterbox-bottom { height: 0; }
+    .hero-letterbox-bottom { display: none; }
 
     .hero-banner {
       position: absolute;
@@ -682,17 +687,11 @@
       100% { opacity: 1;   transform: scale(1.04); }
     }
 
-    /* Cinematic scan line */
+    /* Subtle inner-shadow vignette instead of scanlines */
     .hero-banner::after {
       content: '';
       position: absolute; inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 3px,
-        rgba(0,0,0,0.04) 3px,
-        rgba(0,0,0,0.04) 4px
-      );
+      box-shadow: inset 0 0 120px rgba(3,5,8,0.45);
       pointer-events: none;
     }
 
@@ -727,11 +726,11 @@
       inset: 0;
       z-index: 0;
       background: radial-gradient(ellipse 40% 40% at 80% 50%, rgba(201,148,58,0.04) 0%, transparent 60%);
-      animation: depthPulse 8s ease-in-out infinite;
+      animation: depthBreathe 10s ease-in-out infinite;
     }
-    @keyframes depthPulse {
-      0%,100% { transform: scale(1) translate(0,0); }
-      50% { transform: scale(1.06) translate(-20px, 10px); }
+    @keyframes depthBreathe {
+      0%,100% { opacity: 0.6; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.03); }
     }
 
     .hero-content {
@@ -1911,7 +1910,60 @@
     }
 
     /* ═══════════════════════════════════════════
-       CINEMATIC QUOTE SECTION
+       MOBILE TIMELINE — gold left border
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .tl-card {
+        border-left: 2px solid var(--accent-gold) !important;
+        border-radius: 0 var(--radius) var(--radius) 0 !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       FLOATING SAVE CONTACT BUTTON
+    ═══════════════════════════════════════════ */
+    #float-save-contact {
+      position: fixed;
+      bottom: 100px;
+      right: 36px;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(201,148,58,0.1);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease, background 0.3s ease;
+      cursor: none;
+      white-space: nowrap;
+    }
+    #float-save-contact.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #float-save-contact:hover {
+      background: rgba(201,148,58,0.1);
+      border-color: var(--accent-gold);
+      box-shadow: 0 12px 40px rgba(201,148,58,0.25);
+      transform: translateY(-3px);
+    }
+    #float-save-contact i { font-size: 0.72rem; }
+    @media (max-width: 600px) {
+      #float-save-contact { bottom: 88px; right: 18px; padding: 10px 14px; font-size: 0.58rem; }
+      #float-save-contact .float-label { display: none; }
+    }
+
+    /* ═══════════════════════════════════════════
+       QUOTE SECTION
     ═══════════════════════════════════════════ */
     .cinematic-quote {
       background: var(--bg-primary);
@@ -2132,19 +2184,7 @@
 </div>
 
 <!-- Currently Exploring Strip -->
-<div class="exploring-strip" aria-label="Currently exploring">
-  <div class="exploring-inner">
-    <span class="exploring-label">Currently Exploring</span>
-    <div class="exploring-tags">
-      <span class="exploring-tag">AI Prompting &amp; Tools</span>
-      <span class="exploring-tag">Power Automate</span>
-      <span class="exploring-tag">CISA Preparation</span>
-      <span class="exploring-tag">Data Storytelling</span>
-      <span class="exploring-tag">Generative AI for Business</span>
-      <span class="exploring-tag">Digital Transformation Strategy</span>
-    </div>
-  </div>
-</div>
+
 
 <!-- ═══ ABOUT SECTION ═══ -->
 <section id="about" aria-label="About Me">
@@ -2157,7 +2197,7 @@
     <div class="about-grid">
       <div class="about-photo-wrap reveal-left">
         <div class="about-photo">
-          <img src="profile.jpg" alt="Suman Sitaula — professional headshot" width="380" height="475" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          <img src="profile.webp" alt="Suman Sitaula — professional headshot" width="380" height="475" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
           <div class="about-photo-frame"></div>
         </div>
         <div class="about-badges" aria-label="Professional designations">
@@ -2388,14 +2428,12 @@
 
       <div class="timeline-item">
         <div class="tl-card spotlight-card reveal-left">
-          <div class="tl-company">The British College, Kathmandu</div>
-          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL) &amp; Business Technology (BT)</div>
-          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 2022 – Present</div>
+          <div class="tl-company">Complete Business Solutions Pvt. Ltd.</div>
+          <div class="tl-role">Internal Auditor</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> December 2010 – November 2011 &nbsp;·&nbsp; Lalitpur</div>
           <ul class="tl-bullets">
-            <li>Teaching SBL (Professional Level) and Business Technology (BT)</li>
-            <li>Nepal Rank 1st and 2nd in March 2023 and December 2023</li>
-            <li>Nepal 1st, World 10th in September 2024</li>
-            <li>Nepal 1st, World 19th in June 2025</li>
+            <li>Inventory and fixed asset verification across spare parts, vehicles, and fixed assets</li>
+            <li>Risk and Internal Control Review Audit, identifying discrepancies and ensuring proper asset management</li>
           </ul>
         </div>
         <div class="tl-dot"><div class="tl-dot-inner"></div></div>
@@ -2406,23 +2444,25 @@
         <div class="tl-spacer"></div>
         <div class="tl-dot"><div class="tl-dot-inner"></div></div>
         <div class="tl-card spotlight-card reveal-right">
-          <div class="tl-company">Seekshya Academy</div>
-          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL)</div>
-          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> March 2025 – Present &nbsp;·&nbsp; Online</div>
+          <div class="tl-company">The British College, Kathmandu</div>
+          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL) &amp; Business Technology (BT)</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 2022 – Present</div>
           <ul class="tl-bullets">
-            <li>Online tutoring for SBL integrating leadership, strategic thinking, governance, risk management, ethics, project delivery, and change management</li>
+            <li>Teaching SBL (Professional Level) and Business Technology (BT)</li>
+            <li>Nepal Rank 1st and 2nd in March 2023 and December 2023</li>
+            <li>Nepal 1st, World 10th in September 2024</li>
+            <li>Nepal 1st, World 19th in June 2025</li>
           </ul>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="tl-card spotlight-card reveal-left">
-          <div class="tl-company">Complete Business Solutions Pvt. Ltd.</div>
-          <div class="tl-role">Internal Auditor</div>
-          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> December 2010 – November 2011 &nbsp;·&nbsp; Lalitpur</div>
+          <div class="tl-company">Seekshya Academy</div>
+          <div class="tl-role">ACCA Tutor – Strategic Business Leader (SBL)</div>
+          <div class="tl-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> March 2025 – Present &nbsp;·&nbsp; Online</div>
           <ul class="tl-bullets">
-            <li>Inventory and fixed asset verification across spare parts, vehicles, and fixed assets</li>
-            <li>Risk and Internal Control Review Audit, identifying discrepancies and ensuring proper asset management</li>
+            <li>Online tutoring for SBL integrating leadership, strategic thinking, governance, risk management, ethics, project delivery, and change management</li>
           </ul>
         </div>
         <div class="tl-dot"><div class="tl-dot-inner"></div></div>
@@ -2539,26 +2579,32 @@
           <span class="project-icon">📋</span>
           <span class="project-status status-complete">Completed</span>
         </div>
-        <h3><a href="https://thepromisetracker.vercel.app" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border-soft);transition:border-color .2s ease;" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='var(--border-soft)'">The Promise Tracker</a></h3>
+        <h3>The Promise Tracker</h3>
         <p>A web application designed to track commitments made by individuals and organisations — built entirely through AI-assisted development. A demonstration of turning a real-world accountability need into a live software product without traditional coding.</p>
         <div class="project-tags">
           <span class="project-tag">AI-Built</span>
           <span class="project-tag">Web App</span>
           <span class="project-tag">Accountability</span>
         </div>
+        <a href="https://thepromisetracker.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);border:1px solid var(--border-soft);padding:7px 14px;border-radius:8px;transition:background 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='var(--accent-gold-dim)';this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border-soft)'">
+          <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.6rem;"></i> Visit Site
+        </a>
       </div>
       <div class="project-card reveal" style="transition-delay:0.9s">
         <div class="project-header">
           <span class="project-icon">🌌</span>
           <span class="project-status status-complete">Completed</span>
         </div>
-        <h3><a href="https://thecosmicblueprint.vercel.app" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border-soft);transition:border-color .2s ease;" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='var(--border-soft)'">The Cosmic Blueprint</a></h3>
-        <p>An advanced and comprehensive numerology platform offering personalised cosmic insights through an elegant, interactive interface — conceived, designed, and shipped through AI-assisted development, with no traditional programming required.</p>
+        <h3>The Cosmic Blueprint</h3>
+        <p>An astrology and numerology platform offering personalised cosmic insights through an elegant, interactive interface — conceived, designed, and shipped through AI-assisted development, with no traditional programming required.</p>
         <div class="project-tags">
           <span class="project-tag">AI-Built</span>
           <span class="project-tag">Web App</span>
           <span class="project-tag">Numerology</span>
         </div>
+        <a href="https://thecosmicblueprint.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-gold);border:1px solid var(--border-soft);padding:7px 14px;border-radius:8px;transition:background 0.2s ease,border-color 0.2s ease;" onmouseover="this.style.background='var(--accent-gold-dim)';this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.background='transparent';this.style.borderColor='var(--border-soft)'">
+          <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.6rem;"></i> Visit Site
+        </a>
       </div>
     </div>
   </div>
@@ -2631,17 +2677,31 @@
     </div>
 
     <div class="achievements-grid">
-      <div class="achievement-card spotlight-card reveal" style="transition-delay:0s">
-        <span class="achievement-icon">🥇</span>
-        <span class="achievement-year">September 2024</span>
-        <h3>Nepal Rank 1st · World Rank 10th</h3>
-        <p>Student from The British College achieved Nepal's top position and World 10th place in the ACCA SBL examination — a testament to structured, practical teaching methodology.</p>
-      </div>
-      <div class="achievement-card spotlight-card reveal" style="transition-delay:0.1s">
-        <span class="achievement-icon">🌍</span>
-        <span class="achievement-year">June 2025</span>
-        <h3>Nepal Rank 1st · World Rank 19th</h3>
-        <p>Continued excellence in ACCA SBL outcomes — Nepal's top student and World 19th place in June 2025, making this a consistent pattern of global-level results.</p>
+      <div class="achievement-card spotlight-card reveal" style="transition-delay:0s; grid-column: 1 / -1;">
+        <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;">
+          <span class="achievement-icon" style="font-size:2.6rem;flex-shrink:0;">🥇</span>
+          <div style="flex:1;min-width:220px;">
+            <h3 style="font-size:1.22rem;margin-bottom:10px;">Nepal Rank 1st — ACCA SBL · Consistent National Excellence</h3>
+            <p style="margin-bottom:18px;">Students under Suman Sitaula's SBL teaching have achieved Nepal's top position multiple times across examination sittings, consistently placing among the world's best — a reflection of a structured, practical teaching methodology.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <span style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-gold);display:block;margin-bottom:6px;">March &amp; Dec 2023</span>
+                <strong style="font-size:0.92rem;color:var(--text-primary);display:block;">Consecutive Nepal Rank 1st</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">The British College · Back-to-back national top positions in both sittings</span>
+              </div>
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <span style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-gold);display:block;margin-bottom:6px;">September 2024</span>
+                <strong style="font-size:0.92rem;color:var(--text-primary);display:block;">Nepal Rank 1st · World Rank 10th</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">The British College · Top of Nepal &amp; 10th globally in ACCA SBL</span>
+              </div>
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <span style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-gold);display:block;margin-bottom:6px;">June 2025</span>
+                <strong style="font-size:0.92rem;color:var(--text-primary);display:block;">Nepal Rank 1st · World Rank 19th</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Continued excellence · Nepal top &amp; 19th worldwide in ACCA SBL</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="achievement-card spotlight-card reveal" style="transition-delay:0.2s">
         <span class="achievement-icon">🏭</span>
@@ -2661,12 +2721,32 @@
         <h3>Enterprise ERP Transformation</h3>
         <p>Led Microsoft Dynamics NAV deployment across multiple Sipradi entities, trained 500+ users, and designed 100+ Jet Reports — transforming an entire organisation's operational backbone.</p>
       </div>
-      <div class="achievement-card spotlight-card reveal" style="transition-delay:0.5s">
-        <span class="achievement-icon">🏆</span>
-        <span class="achievement-year">March &amp; Dec 2023</span>
-        <h3>Consecutive Nepal Rank 1st Results</h3>
-        <p>Students from The British College achieved Nepal Rank 1st in both the March 2023 and December 2023 ACCA examination sittings — back-to-back national top positions.</p>
+
+      <div class="achievement-card spotlight-card reveal" style="transition-delay:0.5s; grid-column: 1 / -1;">
+        <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;">
+          <span class="achievement-icon" style="font-size:2.6rem;flex-shrink:0;">🏆</span>
+          <div style="flex:1;min-width:220px;">
+            <span class="achievement-year">2012 – Present</span>
+            <h3 style="font-size:1.22rem;margin:8px 0 12px;">Transforming Sipradi into a System-Driven Company through ISO 9001 QMS</h3>
+            <p style="margin-bottom:18px;">One of the most significant and enduring contributions of Suman Sitaula's career — the rigorous, thoughtful, and wholehearted implementation of ISO 9001 Quality Management System across Sipradi Companies. This was not merely a certification exercise; it was a deep organisational transformation that embedded process discipline, accountability, and a culture of continuous improvement into the DNA of one of Nepal's largest automobile trading groups.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;">
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <strong style="font-size:0.88rem;color:var(--text-primary);display:block;margin-bottom:5px;">🗂️ QMS Design &amp; Documentation</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Developed ISO 9001 quality documents and Operational Policies Manual from scratch across five Sipradi companies — creating the foundational system architecture that governs operations to this day.</span>
+              </div>
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <strong style="font-size:0.88rem;color:var(--text-primary);display:block;margin-bottom:5px;">🔁 Multi-Site Implementation</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Led ISO 9001 certification across multiple Strategic Business Units within Sipradi — ensuring consistent quality standards, internal audit cycles, and management reviews across every entity.</span>
+              </div>
+              <div style="background:var(--accent-gold-dim);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+                <strong style="font-size:0.88rem;color:var(--text-primary);display:block;margin-bottom:5px;">📈 Culture of Continuous Improvement</strong>
+                <span style="font-size:0.82rem;color:var(--text-secondary);">Moved Sipradi beyond compliance — embedding Kaizen thinking, process ownership, and performance measurement into day-to-day operations, turning quality from a department function into an organisational mindset.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -2688,7 +2768,7 @@
         </div>
         <div class="insight-card-bottom">
           <span class="insight-date">May 2025</span>
-          <span class="insight-read-more">Read More <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></span>
+          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="insight-read-more">Read on LinkedIn <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></a>
         </div>
       </div>
       <div class="insight-card reveal" style="transition-delay:0.1s">
@@ -2699,7 +2779,7 @@
         </div>
         <div class="insight-card-bottom">
           <span class="insight-date">March 2025</span>
-          <span class="insight-read-more">Read More <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></span>
+          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="insight-read-more">Read on LinkedIn <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></a>
         </div>
       </div>
       <div class="insight-card reveal" style="transition-delay:0.2s">
@@ -2710,7 +2790,7 @@
         </div>
         <div class="insight-card-bottom">
           <span class="insight-date">January 2025</span>
-          <span class="insight-read-more">Read More <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></span>
+          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="insight-read-more">Read on LinkedIn <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></a>
         </div>
       </div>
     </div>
@@ -2954,6 +3034,11 @@
   <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 </button>
 
+<button id="float-save-contact" aria-label="Save contact" class="vcf-download-btn">
+  <i class="fa-solid fa-address-card"></i>
+  <span class="float-label">Save Contact</span>
+</button>
+
 <!-- ═══════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════ -->
@@ -2986,15 +3071,11 @@
   }
   document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
-  /* ─── Loading Screen ─── */
-  window.addEventListener('load', function() {
-    setTimeout(() => {
-      document.getElementById('loader').classList.add('hidden');
-      document.body.classList.add('loaded');
-    }, 1100);
-  });
+  /* ─── Loading Screen — hide immediately once DOM is ready ─── */
+  document.getElementById('loader').classList.add('hidden');
+  document.body.classList.add('loaded');
 
-  /* ─── Film Grain — canvas, throttled to ~8fps ─── */
+  /* ─── Film Grain — canvas, throttled to ~8fps, pauses off-screen ─── */
   (function() {
     const grain = document.getElementById('film-grain');
     const canvas = document.createElement('canvas');
@@ -3003,9 +3084,10 @@
     canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;';
     grain.appendChild(canvas);
     const ctx = canvas.getContext('2d');
-    let last = 0;
+    let last = 0, running = true;
     const interval = 120; // ~8fps
     function drawGrain(ts) {
+      if (!running) return;
       if (ts - last >= interval) {
         last = ts;
         const img = ctx.createImageData(size, size);
@@ -3018,6 +3100,11 @@
       }
       requestAnimationFrame(drawGrain);
     }
+    // Pause grain when hero is not visible
+    new IntersectionObserver((entries) => {
+      running = entries[0].isIntersecting;
+      if (running) requestAnimationFrame(drawGrain);
+    }, { threshold: 0 }).observe(document.getElementById('home'));
     function maybeGrain() {
       const t = document.documentElement.getAttribute('data-theme');
       const sysLight = window.matchMedia('(prefers-color-scheme:light)').matches;
@@ -3052,7 +3139,7 @@
 
   document.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
 
-  document.querySelectorAll('a, button, .btn, .nav-links a, .social-btn, .contact-card, .skill-card, .highlight-card, .tech-card, .project-card, .achievement-card, .insight-card, .philosophy-card, .value-card, .tl-card').forEach(el => {
+  document.querySelectorAll('a, button, .btn, .nav-links a, .social-btn, .contact-card, .skill-card, .highlight-card, .tech-card, .project-card, .achievement-card, .insight-card, .philosophy-card, .value-card, .tl-card, #float-save-contact').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hovered'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hovered'));
   });
@@ -3060,6 +3147,7 @@
   /* ─── Scroll Progress Bar (rAF-throttled) ─── */
   const navbar = document.getElementById('navbar');
   const backTop = document.getElementById('back-to-top');
+  const floatSave = document.getElementById('float-save-contact');
   const progressBar = document.getElementById('scroll-progress');
   let ticking = false;
   function onScroll() {
@@ -3070,6 +3158,7 @@
         progressBar.style.width = (scrollTop / docH * 100) + '%';
         navbar.classList.toggle('scrolled', scrollTop > 50);
         backTop.classList.toggle('visible', scrollTop > 400);
+        floatSave.classList.toggle('visible', scrollTop > 300);
         updateActiveNav();
         ticking = false;
       });
