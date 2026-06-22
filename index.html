@@ -1545,9 +1545,8 @@
     /* ═══════════════════════════════════════════
        CONTACT — CINEMATIC 3-COLUMN
     ═══════════════════════════════════════════ */
-    #contact { background: var(--bg-secondary); }
     .contact-intro-text { color:var(--text-secondary); max-width:520px; margin:14px 0 0; font-size:0.97rem; line-height:1.85; }
-    .contact-merged-grid { display:grid; grid-template-columns:1fr 260px 1fr; gap:28px; align-items:start; }
+    .reach-grid { display:grid; grid-template-columns:1fr 300px; gap:28px; align-items:start; max-width:760px; margin:0 auto; }
     .contact-left { display:flex; flex-direction:column; gap:18px; }
     .contact-info-stack { display:flex; flex-direction:column; gap:8px; }
     .contact-card {
@@ -1637,25 +1636,16 @@
     }
     .qr-download-btn:hover { background:rgba(201,148,58,.16); border-color:var(--accent-gold); transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,148,58,.2); }
 
-    /* Right form */
-    .contact-form-wrap { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:28px; box-shadow:var(--shadow-card); }
-    .contact-form-title { font-family:var(--font-serif); font-size:1.3rem; color:var(--text-primary); margin-bottom:20px; font-weight:600; }
-    .contact-response-note { font-size:.8rem; color:var(--text-secondary); text-align:center; margin-top:12px; }
-    .contact-response-note strong { color:var(--accent-gold); }
-
     @media (max-width:1140px) {
-      .contact-merged-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:20px; }
-      .contact-left { grid-column:1; grid-row:1; }
-      .contact-qr-panel { grid-column:2; grid-row:1; }
-      .contact-form-wrap { grid-column:1/-1; grid-row:2; }
+      .reach-grid { grid-template-columns:1fr 260px; }
     }
     @media (max-width:700px) {
-      .contact-merged-grid { grid-template-columns:1fr; gap:18px; }
-      .contact-left,.contact-qr-panel,.contact-form-wrap { grid-column:1; grid-row:auto; }
       .contact-qr-panel { max-width:280px; margin:0 auto; }
       .qr-frame { width:188px; height:188px; }
       .qr-img-wrap { width:174px; height:174px; }
       .qr-img-wrap img { width:170px!important; height:170px!important; }
+      .reach-grid { grid-template-columns:1fr; gap:18px; }
+      .reach-grid .contact-qr-panel { max-width:280px; margin:0 auto; }
     }
 
     /* ═══════════════════════════════════════════
@@ -1789,14 +1779,13 @@
       .philosophy-grid { grid-template-columns: 1fr; }
       .values-grid { grid-template-columns: 1fr; }
       .appt-grid { grid-template-columns: 1fr; }
-      .contact-merged-grid { grid-template-columns: 1fr; gap: 18px; }
+      .reach-grid { grid-template-columns: 1fr; gap: 18px; }
       .stats-inner { grid-template-columns: repeat(3, 1fr); }
       .stat-item:nth-child(3) { border-right: none; }
       .footer-grid { grid-template-columns: 1fr; gap: 36px; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .form-row { grid-template-columns: 1fr; }
       .appt-form-wrap { padding: 28px; }
-      .contact-form-wrap { padding: 28px; }
     }
     @media (max-width: 480px) {
       .stats-inner { grid-template-columns: repeat(2, 1fr); }
@@ -1908,7 +1897,7 @@
     /* ═══════════════════════════════════════════
        PERFORMANCE — content-visibility on distant sections
     ═══════════════════════════════════════════ */
-    #experience, #projects, #skills, #achievements, #insights, #appointments, #contact {
+    #experience, #projects, #skills, #achievements, #insights, #appointments {
       content-visibility: auto;
       contain-intrinsic-size: 0 900px;
     }
@@ -1958,7 +1947,6 @@
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#insights">Insights</a></li>
       <li><a href="#appointments">Appointments</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1981,7 +1969,6 @@
   <a href="#achievements" onclick="closeMobileMenu()">Achievements</a>
   <a href="#insights" onclick="closeMobileMenu()">Insights</a>
   <a href="#appointments" onclick="closeMobileMenu()">Appointments</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   <div class="theme-toggle-mobile">
     <button onclick="toggleTheme(); closeMobileMenu();" class="theme-toggle" style="width:auto;padding:6px 14px;border-radius:7px;display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;">
       Toggle Theme
@@ -2134,11 +2121,11 @@
     <div class="philosophy-grid">
       <div class="philosophy-card reveal" style="transition-delay:0s">
         <span class="philosophy-card-label">🔭 Vision Statement</span>
-        <p>I want to help Nepali businesses run on systems, not guesswork. Decisions backed by real data, processes people actually trust, and teams who understand why the work matters, not just what to do.</p>
+        <p>To be a catalyst for digital transformation and strategic excellence, creating value for customers, empowering teams, and shaping sustainable business futures.</p>
       </div>
       <div class="philosophy-card reveal" style="transition-delay:0.15s">
         <span class="philosophy-card-label">🎯 Mission Statement</span>
-        <p>I bring the same discipline to a classroom as I do to a boardroom: turning gut-feel decisions into measured ones, manual processes into automated ones, and complex ideas into something a team can actually act on.</p>
+        <p>To lead with purpose by integrating strategic thinking, digital innovation, and business insights, delivering measurable impact across operations, experience, and growth.</p>
       </div>
     </div>
 
@@ -2700,122 +2687,86 @@
         </form>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ CONTACT + QR MERGED SECTION ═══ -->
-<section id="contact" aria-label="Get In Touch">
-  <div class="container">
-    <div class="section-intro reveal">
-      <span class="section-label">Let's Connect</span>
-      <h2 class="section-heading">Get In Touch</h2>
-      <p class="contact-intro-text">Reach out directly, scan to save my contact, or drop a message below.</p>
-    </div>
-
-    <div class="contact-merged-grid">
-
-      <!-- ── LEFT: Contact details ── -->
-      <div class="contact-left reveal-left">
-        <div class="contact-info-stack">
-          <a href="mailto:suman.sitaula@gmail.com" class="contact-card">
-            <div class="contact-card-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
-            <div class="contact-card-text">
-              <strong>Email</strong>
-              <span>suman.sitaula@gmail.com</span>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
-          </a>
-          <a href="tel:+9779805691747" class="contact-card">
-            <div class="contact-card-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
-            <div class="contact-card-text">
-              <strong>Phone / WhatsApp</strong>
-              <span>+977 9805691747</span>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="contact-card">
-            <div class="contact-card-icon contact-card-icon--blue"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
-            <div class="contact-card-text">
-              <strong>LinkedIn</strong>
-              <span>linkedin.com/in/sumansitaula</span>
-            </div>
-            <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
-          </a>
-          <div class="contact-card contact-card--static">
-            <div class="contact-card-icon contact-card-icon--teal"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-            <div class="contact-card-text">
-              <strong>Location</strong>
-              <span>Kathmandu, Nepal</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-social-row" aria-label="Social media links">
-          <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="https://m.facebook.com/sumansitaula369/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="https://www.youtube.com/@SumanSitaula369" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-          <a href="https://wa.me/9779805691747" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-        </div>
+    <div style="margin-top:64px;">
+      <div class="section-intro section-center reveal" style="margin-bottom:36px;">
+        <span class="section-label">Other Ways to Reach Me</span>
       </div>
+      <div class="reach-grid">
 
-      <!-- ── CENTRE: QR card ── -->
-      <div class="contact-qr-panel reveal" style="transition-delay:0.12s" aria-label="Contact QR code card">
-        <div class="qr-panel-top">
-          <span class="qr-eyebrow">
-            <span class="qr-eyebrow-dot"></span>
-            Scan to Connect
-          </span>
-          <div class="qr-frame" aria-hidden="true">
-            <!-- Corner brackets -->
-            <span class="qr-corner qr-corner--tl"></span>
-            <span class="qr-corner qr-corner--tr"></span>
-            <span class="qr-corner qr-corner--bl"></span>
-            <span class="qr-corner qr-corner--br"></span>
-            <!-- QR image injected here by JS -->
-            <div id="qr-img-target" class="qr-img-wrap">
-              <div class="qr-img-loading" id="qr-loading">Loading…</div>
+        <!-- Contact details -->
+        <div class="contact-left reveal-left">
+          <div class="contact-info-stack">
+            <a href="mailto:suman.sitaula@gmail.com" class="contact-card">
+              <div class="contact-card-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
+              <div class="contact-card-text">
+                <strong>Email</strong>
+                <span>suman.sitaula@gmail.com</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
+            </a>
+            <a href="tel:+9779805691747" class="contact-card">
+              <div class="contact-card-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+              <div class="contact-card-text">
+                <strong>Phone / WhatsApp</strong>
+                <span>+977 9805691747</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-icon contact-card-icon--blue"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+              <div class="contact-card-text">
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/sumansitaula</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="contact-card contact-card--static">
+              <div class="contact-card-icon contact-card-icon--teal"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+              <div class="contact-card-text">
+                <strong>Location</strong>
+                <span>Kathmandu, Nepal</span>
+              </div>
             </div>
           </div>
-          <div class="qr-name-row">
-            <span class="qr-name">Suman Sitaula</span>
-            <span class="qr-badge">FCCA</span>
-          </div>
-          <p class="qr-hint-text">Point your phone camera at the code<br>to instantly save contact details</p>
-        </div>
-        <button class="vcf-download-btn qr-download-btn" aria-label="Download vCard">
-          <i class="fa-solid fa-address-card" aria-hidden="true"></i>
-          Save to Contacts (.vcf)
-        </button>
-      </div>
 
-      <!-- ── RIGHT: Message form ── -->
-      <div class="contact-form-wrap reveal-right">
-        <h3 class="contact-form-title">Send a Message</h3>
-        <form action="https://formspree.io/f/xvzwrnjl" method="POST" aria-label="Contact form">
-          <div class="form-group">
-            <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+          <div class="contact-social-row" aria-label="Social media links">
+            <a href="https://www.linkedin.com/in/sumansitaula" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://m.facebook.com/sumansitaula369/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/@SumanSitaula369" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://wa.me/9779805691747" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           </div>
-          <div class="form-group">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+        </div>
+
+        <!-- QR card -->
+        <div class="contact-qr-panel reveal" style="transition-delay:0.12s" aria-label="Contact QR code card">
+          <div class="qr-panel-top">
+            <span class="qr-eyebrow">
+              <span class="qr-eyebrow-dot"></span>
+              Scan to Connect
+            </span>
+            <div class="qr-frame" aria-hidden="true">
+              <span class="qr-corner qr-corner--tl"></span>
+              <span class="qr-corner qr-corner--tr"></span>
+              <span class="qr-corner qr-corner--bl"></span>
+              <span class="qr-corner qr-corner--br"></span>
+              <div id="qr-img-target" class="qr-img-wrap">
+                <div class="qr-img-loading" id="qr-loading">Loading…</div>
+              </div>
+            </div>
+            <div class="qr-name-row">
+              <span class="qr-name">Suman Sitaula</span>
+              <span class="qr-badge">FCCA</span>
+            </div>
+            <p class="qr-hint-text">Point your phone camera at the code<br>to instantly save contact details</p>
           </div>
-          <div class="form-group">
-            <label for="contact-subject">Subject</label>
-            <input type="text" id="contact-subject" name="subject" placeholder="What's this about?" />
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="What would you like to discuss?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            Send Message
+          <button class="vcf-download-btn qr-download-btn" aria-label="Download vCard">
+            <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+            Save to Contacts (.vcf)
           </button>
-          <p class="contact-response-note">Typical response within <strong>24 hours</strong></p>
-        </form>
-      </div>
+        </div>
 
+      </div>
     </div>
   </div>
 </section>
@@ -2850,7 +2801,7 @@
           <li><a href="#appointments">Digital Transformation</a></li>
           <li><a href="#appointments">ACCA Coaching</a></li>
           <li><a href="#appointments">Professional Training</a></li>
-          <li><a href="#contact">Get In Touch</a></li>
+          <li><a href="#appointments">Get In Touch</a></li>
         </ul>
       </div>
     </div>
