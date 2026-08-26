@@ -657,7 +657,7 @@
       margin: 0 auto;
       padding: 0 32px;
       padding-top: calc(var(--nav-height) + 40px);
-      padding-bottom: 48px;
+      padding-bottom: 104px;
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 56px;
@@ -1365,9 +1365,9 @@
     }
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      max-width: 880px;
+      max-width: 1080px;
       margin: 0 auto;
     }
     .tech-card {
@@ -2706,7 +2706,7 @@
         </div>
       </div>
 
-      <div class="achievement-card spotlight-card reveal" style="transition-delay:0.6s">
+      <div class="achievement-card spotlight-card reveal" style="transition-delay:0.6s; grid-column: 1 / -1;">
         <span class="achievement-icon">🖥️</span>
         <span class="achievement-year">2026</span>
         <h3>Vibe Coding</h3>
@@ -2852,7 +2852,7 @@
     <div class="section-intro section-center reveal">
       <span class="section-label">Let's Connect</span>
       <h2 class="section-heading">Get In Touch</h2>
-      <p style="color:var(--text-secondary);max-width:520px;margin:16px auto 0;font-size:0.97rem;line-height:1.85;">Reach out directly, scan to save my contact, or drop a message below.</p>
+      <p style="color:var(--text-secondary);max-width:520px;margin:16px auto 0;font-size:0.97rem;line-height:1.85;">Reach out directly, or scan to save my contact.</p>
     </div>
 
     <div style="margin-top:48px;">
@@ -2931,35 +2931,6 @@
         </div>
 
       </div>
-    </div>
-
-    <div class="appt-form-wrap reveal" style="max-width:640px;margin:56px auto 0;">
-      <h3>Send a Message</h3>
-      <form action="https://formspree.io/f/xvzwrnjl" method="POST" aria-label="Contact message form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="msg-name">Name</label>
-            <input type="text" id="msg-name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="msg-email">Email</label>
-            <input type="email" id="msg-email" name="email" placeholder="your@email.com" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="msg-subject">Subject</label>
-          <input type="text" id="msg-subject" name="subject" placeholder="What is this about?" />
-        </div>
-        <div class="form-group">
-          <label for="msg-message">Message</label>
-          <textarea id="msg-message" name="message" placeholder="Write your message…" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          Send Message
-        </button>
-        <p class="form-note">I typically respond within <strong>24–48 hours</strong>.</p>
-      </form>
     </div>
   </div>
 </section>
